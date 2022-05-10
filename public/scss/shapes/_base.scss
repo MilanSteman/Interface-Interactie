@@ -1,0 +1,14 @@
+ol {
+    width: var(--breedte);
+    height: var(--hoogte);
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 2s linear infinite;
+    // transform: rotate3d(1, 1, 1, 360deg);
+
+    li {
+        position: absolute;
+        // background: linear-gradient(to top right, #9f3a3a, #b46969, #a64747, #9f3a3a);
+        background-color: lightblue;
+    }
+}

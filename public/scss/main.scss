@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/* Imports */
+@import "shapes/base", "shapes/rectangle", "shapes/shaped-rectangle", "shapes/bottom-rectangle";
+
+:root {
+    --BREEDTE-RATIO: 1.4;
+    --DIEPTE-RATIO: 10;
+    --DIEPTE-RATIO2: calc(var(--DIEPTE-RATIO) / 3 * 2);
+    --DIEPTE-RATIO3: calc(var(--DIEPTE-RATIO) / 3);
+
+    --brown65: hsl(0deg, 47%, 55%);
+    --brown55: hsl(0deg, 47%, 50%);
+    --brown45: hsl(0deg, 47%, 45%);
+
+    --hoogte: 12.5em;
+    --hoogte3: calc((var(--hoogte)) / 3);
+
+    --breedte: calc(var(--hoogte) * var(--BREEDTE-RATIO));
+
+    --diepte: calc(var(--hoogte) / var(--DIEPTE-RATIO));
+    --diepte2: calc(var(--hoogte) / var(--DIEPTE-RATIO2));
+    --diepte3: calc(var(--hoogte) / var(--DIEPTE-RATIO3));
+    --perspective-size: 37.5em;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+main {
+    width: var(--breedte);
+    height: 27.5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 37.5em;
+}
+
+article {
+    perspective: var(--perspective-size);
+    transform-style: preserve-3d;
+    transform: rotate3d(1, 1, 1, 239deg);
+    width: var(--breedte);
+    height: 27.5em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: red;
+
+    section {
+        transform-style: preserve-3d;
+        width: var(--breedte);
+    }
+
+    section:nth-of-type(1),
+    section:nth-of-type(2) {
+        height: var(--hoogte);
+    }
+
+    section:nth-of-type(2) {
+        transform: translateZ(calc((var(--diepte2) - var(--diepte)) / 2));
+    }
+
+    section:nth-of-type(3) {
+        height: var(--hoogte3);
+        transform: translateZ(calc((var(--diepte3) - var(--diepte)) / 2));
+    }
+}

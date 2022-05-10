@@ -1,0 +1,44 @@
+ol.shaped-rectangle > li {
+    position: absolute;
+
+    &:nth-of-type(1),
+    &:nth-of-type(2) {
+        height: var(--hoogte);
+        width: var(--breedte);
+
+        clip-path: path(
+            "M280 0V200H0V0H93.33C93.33 25.77 114.23 46.67 140 46.67C165.77 46.67 186.66 25.77 186.66 0H280Z"
+        );
+    }
+
+    &:nth-of-type(3) {
+        height: var(--diepte2);
+        width: var(--breedte);
+    }
+
+    &:nth-of-type(4),
+    &:nth-of-type(5) {
+        height: var(--hoogte);
+        width: var(--diepte2);
+    }
+
+    &:nth-of-type(1) {
+        transform: rotateY(0deg) translateZ(calc(var(--diepte2) / 2));
+    }
+
+    &:nth-of-type(2) {
+        transform: rotateY(180deg) translateZ(calc(var(--diepte2) / 2));
+    }
+
+    &:nth-of-type(3) {
+        transform: rotateX(-90deg) translateZ(calc(var(--hoogte) - ((var(--diepte2) / 2))));
+    }
+
+    &:nth-of-type(4) {
+        transform: rotateY(90deg) translateZ(calc(var(--diepte2) / -2));
+    }
+
+    &:nth-of-type(5) {
+        transform: rotateY(90deg) translateZ(calc(var(--breedte) - ((var(--diepte2) / 2))));
+    }
+}
