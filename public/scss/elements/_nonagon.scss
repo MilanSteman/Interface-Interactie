@@ -1,0 +1,29 @@
+article > section:nth-of-type(3) ol li:nth-of-type(1) {
+    div {
+        position: absolute;
+        right: 2.5em;
+        top: 50%;
+        transform: translateY(-50%) translateZ(0.25em);
+        width: 2.5em;
+        height: 2.5em;
+        clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+        box-shadow: inset 0 0 5px 5px #00000050, 0 0 5px -2px #000000;
+        background: radial-gradient(circle, #9D4444 90%, #8D8F9A 100%) border-box;
+        
+        &::before {
+            content: '';
+            left: 0.125em;
+            top: 0.125em;
+            width: 2.25em;
+            height: 2.25em;
+            position: absolute;
+            transform: translateZ(0.25em);
+            background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(70, 252, 250, 1) 100%);
+            clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+        }
+        // border: 0.25em solid transparent;
+        // background: linear-gradient(#313641, #313641) padding-box,
+        //     linear-gradient(to right, #57595a, #3b3c3e) border-box; /* https://codyhouse.co/nuggets/css-gradient-borders */
+        // border-radius: 0.5em;
+    }
+}

@@ -11,7 +11,14 @@ ol {
 
 ol li {
   position: absolute;
-  background-color: lightblue;
+  background-color: lightcoral;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+article section:not(:last-of-type) ol > li:first-of-type {
+  -webkit-box-shadow: inset 0 -10px 10px -10px #000000;
+          box-shadow: inset 0 -10px 10px -10px #000000;
 }
 
 ol > li {
@@ -70,8 +77,6 @@ ol.shaped-rectangle > li {
 ol.shaped-rectangle > li:nth-of-type(1), ol.shaped-rectangle > li:nth-of-type(2) {
   height: var(--hoogte);
   width: var(--breedte);
-  -webkit-clip-path: path("M280 0V200H0V0H93.33C93.33 25.77 114.23 46.67 140 46.67C165.77 46.67 186.66 25.77 186.66 0H280Z");
-          clip-path: path("M280 0V200H0V0H93.33C93.33 25.77 114.23 46.67 140 46.67C165.77 46.67 186.66 25.77 186.66 0H280Z");
 }
 
 ol.shaped-rectangle > li:nth-of-type(3) {
@@ -87,6 +92,8 @@ ol.shaped-rectangle > li:nth-of-type(4), ol.shaped-rectangle > li:nth-of-type(5)
 ol.shaped-rectangle > li:nth-of-type(1) {
   -webkit-transform: rotateY(0deg) translateZ(calc(var(--diepte2) / 2));
           transform: rotateY(0deg) translateZ(calc(var(--diepte2) / 2));
+  -webkit-clip-path: path("M280 0V200H0V0H93.33C93.33 25.77 114.23 46.67 140 46.67C165.77 46.67 186.66 25.77 186.66 0H280Z");
+          clip-path: path("M280 0V200H0V0H93.33C93.33 25.77 114.23 46.67 140 46.67C165.77 46.67 186.66 25.77 186.66 0H280Z");
 }
 
 ol.shaped-rectangle > li:nth-of-type(2) {
@@ -158,11 +165,58 @@ ol.bottom-rectangle > li:nth-of-type(6) {
           transform: rotateY(90deg) translateZ(calc(var(--breedte) - (var(--diepte3) / 2)));
 }
 
+article > section:nth-of-type(1) ol li:nth-of-type(1) {
+  padding: 2.5em;
+}
+
+article > section:nth-of-type(1) ol li:nth-of-type(1) div {
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: inset 0 0 5px 5px #00000050, 0 0 5px -2px #000000;
+          box-shadow: inset 0 0 5px 5px #00000050, 0 0 5px -2px #000000;
+  border: 0.25em solid transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(#313641), to(#313641)) padding-box, -webkit-gradient(linear, left top, right top, from(#57595a), to(#3b3c3e)) border-box;
+  background: linear-gradient(#313641, #313641) padding-box, linear-gradient(to right, #57595a, #3b3c3e) border-box;
+  /* https://codyhouse.co/nuggets/css-gradient-borders */
+  border-radius: 0.5em;
+  -webkit-transform: translateZ(0.25em);
+          transform: translateZ(0.25em);
+}
+
+article > section:nth-of-type(3) ol li:nth-of-type(1) div {
+  position: absolute;
+  right: 2.5em;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateZ(0.25em);
+          transform: translateY(-50%) translateZ(0.25em);
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+          clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+  -webkit-box-shadow: inset 0 0 5px 5px #00000050, 0 0 5px -2px #000000;
+          box-shadow: inset 0 0 5px 5px #00000050, 0 0 5px -2px #000000;
+  background: radial-gradient(circle, #9D4444 90%, #8D8F9A 100%) border-box;
+}
+
+article > section:nth-of-type(3) ol li:nth-of-type(1) div::before {
+  content: '';
+  left: 0.125em;
+  top: 0.125em;
+  width: 2.25em;
+  height: 2.25em;
+  position: absolute;
+  -webkit-transform: translateZ(0.25em);
+          transform: translateZ(0.25em);
+  background: radial-gradient(circle, white 0%, #46fcfa 100%);
+  -webkit-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+          clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+}
+
 :root {
   --BREEDTE-RATIO: 1.4;
   --DIEPTE-RATIO: 10;
-  --DIEPTE-RATIO2: calc(var(--DIEPTE-RATIO) / 3 * 2);
-  --DIEPTE-RATIO3: calc(var(--DIEPTE-RATIO) / 3);
+  --DIEPTE-RATIO2: calc(var(--DIEPTE-RATIO) * 0.7);
+  --DIEPTE-RATIO3: calc(var(--DIEPTE-RATIO) * 0.5);
   --brown65: hsl(0deg, 47%, 55%);
   --brown55: hsl(0deg, 47%, 50%);
   --brown45: hsl(0deg, 47%, 45%);
@@ -203,14 +257,15 @@ article {
           perspective: var(--perspective-size);
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transform: rotate3d(1, 1, 1, 239deg);
-          transform: rotate3d(1, 1, 1, 239deg);
+  -webkit-transform: rotate3d(1, 1, 1, 360deg);
+          transform: rotate3d(1, 1, 1, 360deg);
   width: var(--breedte);
   height: 27.5em;
   position: absolute;
   top: 0;
   left: 0;
-  background: red;
+  background: -webkit-gradient(linear, left bottom, right top, from(#9f3a3a), color-stop(#b46969), color-stop(#a64747), to(#9f3a3a));
+  background: linear-gradient(to top right, #9f3a3a, #b46969, #a64747, #9f3a3a);
 }
 
 article section {

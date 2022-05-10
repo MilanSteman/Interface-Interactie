@@ -1,13 +1,14 @@
 @charset "UTF-8";
 
 /* Imports */
-@import "shapes/base", "shapes/rectangle", "shapes/shaped-rectangle", "shapes/bottom-rectangle";
+@import "shapes/base", "shapes/rectangle", "shapes/shaped-rectangle", "shapes/bottom-rectangle", "elements/screen", "elements/nonagon";
 
 :root {
     --BREEDTE-RATIO: 1.4;
+
     --DIEPTE-RATIO: 10;
-    --DIEPTE-RATIO2: calc(var(--DIEPTE-RATIO) / 3 * 2);
-    --DIEPTE-RATIO3: calc(var(--DIEPTE-RATIO) / 3);
+    --DIEPTE-RATIO2: calc(var(--DIEPTE-RATIO) * 0.7);
+    --DIEPTE-RATIO3: calc(var(--DIEPTE-RATIO) * 0.5);
 
     --brown65: hsl(0deg, 47%, 55%);
     --brown55: hsl(0deg, 47%, 50%);
@@ -21,6 +22,7 @@
     --diepte: calc(var(--hoogte) / var(--DIEPTE-RATIO));
     --diepte2: calc(var(--hoogte) / var(--DIEPTE-RATIO2));
     --diepte3: calc(var(--hoogte) / var(--DIEPTE-RATIO3));
+
     --perspective-size: 37.5em;
 }
 
@@ -47,13 +49,13 @@ main {
 article {
     perspective: var(--perspective-size);
     transform-style: preserve-3d;
-    transform: rotate3d(1, 1, 1, 239deg);
+    transform: rotate3d(1, 1, 1, 360deg);
     width: var(--breedte);
     height: 27.5em;
     position: absolute;
     top: 0;
     left: 0;
-    background: red;
+    background: linear-gradient(to top right, #9f3a3a, #b46969, #a64747, #9f3a3a);
 
     section {
         transform-style: preserve-3d;

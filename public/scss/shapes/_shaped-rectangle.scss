@@ -5,10 +5,6 @@ ol.shaped-rectangle > li {
     &:nth-of-type(2) {
         height: var(--hoogte);
         width: var(--breedte);
-
-        clip-path: path(
-            "M280 0V200H0V0H93.33C93.33 25.77 114.23 46.67 140 46.67C165.77 46.67 186.66 25.77 186.66 0H280Z"
-        );
     }
 
     &:nth-of-type(3) {
@@ -24,6 +20,10 @@ ol.shaped-rectangle > li {
 
     &:nth-of-type(1) {
         transform: rotateY(0deg) translateZ(calc(var(--diepte2) / 2));
+        
+        clip-path: path(
+            "M280 0V200H0V0H93.33C93.33 25.77 114.23 46.67 140 46.67C165.77 46.67 186.66 25.77 186.66 0H280Z"
+        );
     }
 
     &:nth-of-type(2) {
