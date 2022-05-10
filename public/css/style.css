@@ -1,1 +1,64 @@
-/* */
+:root {
+    --hoogte: 12.5em;
+    --breedte: calc(var(--hoogte)*1.4);
+    --diepte: calc(var(--hoogte)/10);
+    --perspective-size: 37.5em;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+article {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: var(--perspective-size);
+}
+
+ol {
+    width: var(--breedte);
+    height: var(--hoogte);
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+    animation: rotate 2s linear infinite;
+    transform: rotate3d(1, 0, 1, 273deg);
+}
+
+li {
+    position: absolute;
+    background-color: red;
+}
+
+ol li:nth-of-type(1), ol li:nth-of-type(3) {
+    height: var(--hoogte);
+    width: var(--breedte);
+}
+
+ol li:nth-of-type(2), ol li:nth-of-type(4) {
+    height: var(--diepte);
+    width: var(--breedte);
+}
+
+ol li:nth-of-type(5), ol li:nth-of-type(6) {
+    height: var(--hoogte);
+    width: var(--diepte);
+}
+
+/* @keyframes rotate {
+    0% {
+        transform: rotate3d(0, 0, 0, 0deg);
+    }
+
+    100% {
+        transform: rotate3d(1, 1, 1, 360deg);
+    }
+} */
