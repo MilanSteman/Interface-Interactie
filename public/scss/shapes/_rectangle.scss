@@ -1,9 +1,9 @@
-ol > li {
+article > section > ol > li {
     position: absolute;
 
     &:nth-of-type(1),
     &:nth-of-type(3) {
-        height: var(--hoogte);
+        height: var(--hoogte2);
         width: var(--breedte);
     }
 
@@ -15,7 +15,7 @@ ol > li {
 
     &:nth-of-type(5),
     &:nth-of-type(6) {
-        height: var(--hoogte);
+        height: var(--hoogte2);
         width: var(--diepte);
     }
 
@@ -32,7 +32,7 @@ ol > li {
     }
 
     &:nth-of-type(4) {
-        transform: rotateX(-90deg) translateZ(calc(var(--hoogte) - (var(--diepte) / 2)));
+        transform: rotateX(-90deg) translateZ(calc(var(--hoogte2) - (var(--diepte) / 2)));
     }
 
     &:nth-of-type(5) {
