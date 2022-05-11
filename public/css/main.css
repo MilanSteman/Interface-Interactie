@@ -70,17 +70,17 @@ article > section:nth-of-type(2) > ol > li {
   position: absolute;
 }
 
-article > section:nth-of-type(2) > ol > li:nth-of-type(1), article > section:nth-of-type(2) > ol > li:nth-of-type(2) {
+article > section:nth-of-type(2) > ol > li:nth-of-type(1), article > section:nth-of-type(2) > ol > li:nth-of-type(3) {
   height: var(--hoogte4);
   width: var(--breedte);
 }
 
-article > section:nth-of-type(2) > ol > li:nth-of-type(3) {
+article > section:nth-of-type(2) > ol > li:nth-of-type(2), article > section:nth-of-type(2) > ol > li:nth-of-type(4) {
   height: var(--diepte2);
   width: var(--breedte);
 }
 
-article > section:nth-of-type(2) > ol > li:nth-of-type(4), article > section:nth-of-type(2) > ol > li:nth-of-type(5) {
+article > section:nth-of-type(2) > ol > li:nth-of-type(5), article > section:nth-of-type(2) > ol > li:nth-of-type(6) {
   height: var(--hoogte4);
   width: var(--diepte2);
 }
@@ -92,23 +92,28 @@ article > section:nth-of-type(2) > ol > li:nth-of-type(1) {
 }
 
 article > section:nth-of-type(2) > ol > li:nth-of-type(2) {
+  -webkit-transform: rotateX(90deg) translateZ(calc(var(--diepte2) / 2));
+          transform: rotateX(90deg) translateZ(calc(var(--diepte2) / 2));
+}
+
+article > section:nth-of-type(2) > ol > li:nth-of-type(3) {
   -webkit-transform: rotateY(180deg) translateZ(calc(var(--diepte2) / 2));
           transform: rotateY(180deg) translateZ(calc(var(--diepte2) / 2));
 }
 
-article > section:nth-of-type(2) > ol > li:nth-of-type(3) {
-  -webkit-transform: rotateX(-90deg) translateZ(calc(var(--hoogte4) - ((var(--diepte2) / 2))));
-          transform: rotateX(-90deg) translateZ(calc(var(--hoogte4) - ((var(--diepte2) / 2))));
+article > section:nth-of-type(2) > ol > li:nth-of-type(4) {
+  -webkit-transform: rotateX(-90deg) translateZ(calc(var(--hoogte4) - (var(--diepte2) / 2)));
+          transform: rotateX(-90deg) translateZ(calc(var(--hoogte4) - (var(--diepte2) / 2)));
 }
 
-article > section:nth-of-type(2) > ol > li:nth-of-type(4) {
+article > section:nth-of-type(2) > ol > li:nth-of-type(5) {
   -webkit-transform: rotateY(90deg) translateZ(calc(var(--diepte2) / -2));
           transform: rotateY(90deg) translateZ(calc(var(--diepte2) / -2));
 }
 
-article > section:nth-of-type(2) > ol > li:nth-of-type(5) {
-  -webkit-transform: rotateY(90deg) translateZ(calc(var(--breedte) - ((var(--diepte2) / 2))));
-          transform: rotateY(90deg) translateZ(calc(var(--breedte) - ((var(--diepte2) / 2))));
+article > section:nth-of-type(2) > ol > li:nth-of-type(6) {
+  -webkit-transform: rotateY(90deg) translateZ(calc(var(--breedte) - (var(--diepte2) / 2)));
+          transform: rotateY(90deg) translateZ(calc(var(--breedte) - (var(--diepte2) / 2)));
 }
 
 article > section:nth-of-type(3) > ol > li {
