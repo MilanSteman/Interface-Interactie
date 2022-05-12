@@ -7,7 +7,7 @@ article > section > ol {
 
 article > section > ol > li {
   position: absolute;
-  background-color: lightcoral;
+  background-color: #DC0A2D;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
@@ -886,8 +886,7 @@ article {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background: -webkit-gradient(linear, left bottom, right top, from(#9f3a3a), color-stop(#b46969), color-stop(#a64747), to(#9f3a3a));
-  background: linear-gradient(to top right, #9f3a3a, #b46969, #a64747, #9f3a3a);
+  background-color: #DC0A2D;
   -webkit-animation: rotate 2s linear infinite;
           animation: rotate 2s linear infinite;
 }
