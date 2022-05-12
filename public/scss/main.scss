@@ -2,7 +2,7 @@
 
 /* Imports */
 @import "shapes/base", "shapes/rectangle", "shapes/mid-rectangle", "shapes/bottom-rectangle", "elements/screen", "elements/nonagon", "elements/top-buttons",
-"elements/d-pad", "elements/long-buttons", "elements/sticks";
+"elements/d-pad", "elements/long-buttons", "elements/sticks", "elements/connector", "shapes/right-rectangle";
 
 :root {
     --BREEDTE-RATIO: 1.4;
@@ -25,6 +25,10 @@
     --diepte: calc(var(--hoogte) / var(--DIEPTE-RATIO));
     --diepte2: calc(var(--hoogte) / var(--DIEPTE-RATIO2));
     --diepte3: calc(var(--hoogte) / var(--DIEPTE-RATIO3));
+
+    --hoogte-connector: calc(var(--hoogte2) / 2);
+    --diepte-connector: calc(var(--diepte2) / 2);
+    --breedte-connector : var(--diepte-connector);
 
     --perspective-size: 37.5em;
 }
@@ -70,7 +74,7 @@ article {
         height: var(--hoogte2);
     }
 
-    section:nth-of-type(2) {
+    section:nth-of-type(2), section:nth-of-type(4) {
         height: var(--hoogte4);
     }
 

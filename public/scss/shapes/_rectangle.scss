@@ -1,4 +1,4 @@
-article > section > ol > li {
+article > section:nth-child(1) > ol > li {
     position: absolute;
 
     &:nth-of-type(1),
