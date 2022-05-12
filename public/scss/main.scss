@@ -2,7 +2,7 @@
 
 /* Imports */
 @import "shapes/base", "shapes/rectangle", "shapes/mid-rectangle", "shapes/bottom-rectangle", "elements/screen", "elements/nonagon", "elements/top-buttons",
-"elements/d-pad", "elements/long-buttons", "elements/sticks", "elements/connector", "shapes/right-rectangle";
+"elements/d-pad", "elements/long-buttons", "elements/sticks", "elements/connector", "shapes/right-rectangle", "elements/connector2", "shapes/top-rectangle";
 
 :root {
     --BREEDTE-RATIO: 1.4;
@@ -30,7 +30,11 @@
     --diepte-connector: calc(var(--diepte2) / 2);
     --breedte-connector : var(--diepte-connector);
 
-    --perspective-size: 37.5em;
+    --breedte-connector2: calc(var(--breedte) / 2);
+    --diepte-connector2: calc(var(--diepte) / 2);
+    --hoogte-connector2: var(--diepte-connector2);
+
+    --perspective-size: 1500em;
 }
 
 *,
@@ -43,9 +47,13 @@
     list-style: none;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 main {
     width: var(--breedte);
-    height: 27.5em;
+    height: var(--breedte);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -60,8 +68,9 @@ article {
     width: var(--breedte);
     height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3));
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: linear-gradient(to top right, #9f3a3a, #b46969, #a64747, #9f3a3a);
     animation: rotate 2s linear infinite;
 
@@ -86,8 +95,11 @@ article {
         height: var(--hoogte3);
         transform: translateZ(calc((var(--diepte3) - var(--diepte)) / 2));
     }
-}
 
+    section:nth-of-type(5) {
+        height: var(--hoogte2);
+    }
+}
 
 // @keyframes rotate {
 //     0% {

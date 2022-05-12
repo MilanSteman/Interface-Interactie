@@ -3,12 +3,12 @@ article>section:nth-of-type(4) {
     display: flex;
     align-items: center;
     top: var(--hoogte2);
-    transform: translateZ(1em) translateX(100%) rotate3d(0, 1, 0, 0deg);
+    transform: translateZ(.983em) translateX(100%) rotate3d(0, 1, 0, 0deg);
     transition: .75s;
     transform-origin: left;
 
     &.open {
-        transform: translateZ(1em) translateX(calc(100% + var(--breedte-connector))) rotate3d(0, 1, 0, -180deg);
+        transform: translateZ(.983em) translateX(calc(100% + .85em)) rotate3d(0, 1, 0, -180deg);
     }
 
     ol {
@@ -22,10 +22,6 @@ article>section:nth-of-type(4) {
             &:nth-of-type(3) {
                 height: var(--hoogte4);
                 width: var(--breedte);
-            }
-
-            &:nth-of-type(3) {
-                background-color: aqua;
             }
 
             &:nth-of-type(2),
