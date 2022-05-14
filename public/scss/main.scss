@@ -23,8 +23,8 @@
     // Box Shadows
     --bg-dark-shadow: 0 0 0.125em 0.125em var(--black);
     --inset-dark-shadow: inset 0 0 0.25em 0.25em var(--blackhalf);
+    --inset-dark-shadow-big: inset 0 0 1em 1em var(--blackhalf);
     --dark-shadow-combined: var(--bg-dark-shadow), var(--inset-dark-shadow);
-
     --rectangle-bottom-shadow: inset 0 -.625em .625em -.625em var(--black);
 
     // Ratio

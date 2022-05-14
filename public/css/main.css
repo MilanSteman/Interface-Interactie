@@ -24,27 +24,12 @@ article > section:nth-of-type(3) ol li:nth-of-type(1) div {
   top: 50%;
   -webkit-transform: translateY(-50%) translateZ(0.25em);
           transform: translateY(-50%) translateZ(0.25em);
-  width: 2.5em;
-  aspect-ratio: 1/1;
-  -webkit-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-          clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-  -webkit-box-shadow: inset 0 0 5px 5px #00000050, 0 0 5px -2px #000000,  0 0 0.1em 0.1em #fff;
-          box-shadow: inset 0 0 5px 5px #00000050, 0 0 5px -2px #000000,  0 0 0.1em 0.1em #fff;
-  background: radial-gradient(circle, #9D4444 90%, #8D8F9A 100%) border-box;
-}
-
-article > section:nth-of-type(3) ol li:nth-of-type(1) div::before {
-  content: '';
-  left: 50%;
-  top: 50%;
   width: 2.25em;
   aspect-ratio: 1/1;
-  position: absolute;
-  -webkit-transform: translate(-50%, -50%) translateZ(0.25em);
-          transform: translate(-50%, -50%) translateZ(0.25em);
+  border-radius: 50%;
+  -webkit-box-shadow: var(--dark-shadow-combined);
+          box-shadow: var(--dark-shadow-combined);
   background: radial-gradient(circle, white 0%, #46fcfa 100%);
-  -webkit-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-          clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
 }
 
 article > section:nth-of-type(1) ol li:nth-of-type(1),
@@ -184,6 +169,9 @@ article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1)
 
 article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) > div:nth-of-type(1) ol li:nth-of-type(5) button {
   border-width: 0;
+  z-index: 0;
+  -webkit-box-shadow: var(--inset-dark-shadow-big);
+          box-shadow: var(--inset-dark-shadow-big);
 }
 
 article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) > div:nth-of-type(1) ol li button {
@@ -196,7 +184,7 @@ article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1)
           transform: translateZ(0.25em);
   width: 100%;
   height: 100%;
-  border-radius: 0;
+  z-index: 1;
 }
 
 article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) {
@@ -768,6 +756,7 @@ article > section > ol {
         linear-gradient(to right, var(--lightgray), var(--gray_darker)) border-box;
   --bg-dark-shadow: 0 0 0.125em 0.125em var(--black);
   --inset-dark-shadow: inset 0 0 0.25em 0.25em var(--blackhalf);
+  --inset-dark-shadow-big: inset 0 0 1em 1em var(--blackhalf);
   --dark-shadow-combined: var(--bg-dark-shadow), var(--inset-dark-shadow);
   --rectangle-bottom-shadow: inset 0 -.625em .625em -.625em var(--black);
   --BREEDTE-RATIO: 1.4;

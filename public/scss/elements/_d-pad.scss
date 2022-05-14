@@ -77,6 +77,8 @@ article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1)
                 &:nth-of-type(5) {
                     button {
                         border-width: 0;
+                        z-index: 0;
+                        box-shadow: var(--inset-dark-shadow-big);
                     }
                 }
 
@@ -84,7 +86,7 @@ article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1)
                     @include Gray_Button(false);
                     width: 100%;
                     height: 100%;
-                    border-radius: 0;
+                    z-index: 1;
                 }
             }
         }
