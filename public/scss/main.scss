@@ -30,11 +30,11 @@
     --diepte-connector: calc(var(--diepte2) / 2);
     --breedte-connector : var(--diepte-connector);
 
-    --breedte-connector2: calc(var(--breedte) / 2);
+    --breedte-connector2: calc(var(var(--breedte)) / 2)
     --diepte-connector2: calc(var(--diepte) / 2);
     --hoogte-connector2: var(--diepte-connector2);
 
-    --perspective-size: 1500em;
+    --perspective-size: 150em;
 }
 
 *,
@@ -47,13 +47,9 @@
     list-style: none;
 }
 
-::-webkit-scrollbar {
-    display: none;
-}
-
 main {
     width: var(--breedte);
-    height: var(--breedte);
+    height: 27.5em;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -68,11 +64,9 @@ article {
     width: var(--breedte);
     height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3));
     position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    // background: linear-gradient(to top right, #9f3a3a, #b46969, #a64747, #9f3a3a);
-    background-color: #DC0A2D;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to top right, #9f3a3a, #b46969, #a64747, #9f3a3a);
     animation: rotate 2s linear infinite;
 
     section {

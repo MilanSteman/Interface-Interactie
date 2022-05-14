@@ -1,7 +1,6 @@
-article>section:nth-of-type(5) ol:nth-of-type(1) {
+article > section:nth-of-type(5) ol:nth-of-type(1) {
     height: var(--hoogte-connector2);
     width: var(--breedte-connector2);
-    bottom: 0.25em;
 
     li {
         background-color: black;
