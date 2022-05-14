@@ -384,115 +384,9 @@ article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1)
   background: linear-gradient(#313641, #313641) padding-box, linear-gradient(to right, #57595a, #3b3c3e) border-box;
 }
 
-article > section:nth-of-type(4) ol:nth-of-type(1) {
-  height: var(--hoogte-connector);
-  width: var(--breedte-connector);
-}
-
-article > section:nth-of-type(4) ol:nth-of-type(1) li {
-  background-color: black;
-}
-
-article > section:nth-of-type(4) ol:nth-of-type(1) li:nth-of-type(1), article > section:nth-of-type(4) ol:nth-of-type(1) li:nth-of-type(3) {
-  height: var(--hoogte-connector);
-  width: var(--breedte-connector);
-  padding: 0;
-}
-
-article > section:nth-of-type(4) ol:nth-of-type(1) li:nth-of-type(2), article > section:nth-of-type(4) ol:nth-of-type(1) li:nth-of-type(4) {
-  height: var(--diepte-connector);
-  width: var(--breedte-connector);
-}
-
-article > section:nth-of-type(4) ol:nth-of-type(1) li:nth-of-type(5), article > section:nth-of-type(4) ol:nth-of-type(1) li:nth-of-type(6) {
-  height: var(--hoogte-connector);
-  width: var(--diepte-connector);
-}
-
-article > section:nth-of-type(4) ol:nth-of-type(1) li:nth-of-type(1) {
-  -webkit-transform: rotateY(0deg) translateZ(calc(var(--diepte-connector) / 2));
-          transform: rotateY(0deg) translateZ(calc(var(--diepte-connector) / 2));
-}
-
-article > section:nth-of-type(4) ol:nth-of-type(1) li:nth-of-type(2) {
-  -webkit-transform: rotateX(90deg) translateZ(calc(var(--diepte-connector) / 2));
-          transform: rotateX(90deg) translateZ(calc(var(--diepte-connector) / 2));
-}
-
-article > section:nth-of-type(4) ol:nth-of-type(1) li:nth-of-type(3) {
-  -webkit-transform: rotateY(180deg) translateZ(calc(var(--diepte-connector) / 2));
-          transform: rotateY(180deg) translateZ(calc(var(--diepte-connector) / 2));
-}
-
-article > section:nth-of-type(4) ol:nth-of-type(1) li:nth-of-type(4) {
-  -webkit-transform: rotateX(-90deg) translateZ(calc(var(--hoogte-connector) - (var(--diepte-connector) / 2)));
-          transform: rotateX(-90deg) translateZ(calc(var(--hoogte-connector) - (var(--diepte-connector) / 2)));
-}
-
-article > section:nth-of-type(4) ol:nth-of-type(1) li:nth-of-type(5) {
-  -webkit-transform: rotateY(90deg) translateZ(calc(var(--diepte-connector) / -2));
-          transform: rotateY(90deg) translateZ(calc(var(--diepte-connector) / -2));
-}
-
-article > section:nth-of-type(4) ol:nth-of-type(1) li:nth-of-type(6) {
-  -webkit-transform: rotateY(90deg) translateZ(calc(var(--breedte-connector) - (var(--diepte-connector) / 2)));
-          transform: rotateY(90deg) translateZ(calc(var(--breedte-connector) - (var(--diepte-connector) / 2)));
-}
-
-article > section:nth-of-type(5) ol:nth-of-type(1) {
-  height: var(--hoogte-connector2);
-  width: var(--breedte-connector2);
-  bottom: 0.25em;
-}
-
-article > section:nth-of-type(5) ol:nth-of-type(1) li {
-  background-color: black;
-}
-
-article > section:nth-of-type(5) ol:nth-of-type(1) li:nth-of-type(1), article > section:nth-of-type(5) ol:nth-of-type(1) li:nth-of-type(3) {
-  height: var(--hoogte-connector2);
-  width: var(--breedte-connector2);
-  padding: 0;
-}
-
-article > section:nth-of-type(5) ol:nth-of-type(1) li:nth-of-type(2), article > section:nth-of-type(5) ol:nth-of-type(1) li:nth-of-type(4) {
-  height: var(--diepte-connector2);
-  width: var(--breedte-connector2);
-}
-
-article > section:nth-of-type(5) ol:nth-of-type(1) li:nth-of-type(5), article > section:nth-of-type(5) ol:nth-of-type(1) li:nth-of-type(6) {
-  height: var(--hoogte-connector2);
-  width: var(--diepte-connector2);
-}
-
-article > section:nth-of-type(5) ol:nth-of-type(1) li:nth-of-type(1) {
-  -webkit-transform: rotateY(0deg) translateZ(calc(var(--diepte-connector2) / 2));
-          transform: rotateY(0deg) translateZ(calc(var(--diepte-connector2) / 2));
-}
-
-article > section:nth-of-type(5) ol:nth-of-type(1) li:nth-of-type(2) {
-  -webkit-transform: rotateX(90deg) translateZ(calc(var(--diepte-connector2) / 2));
-          transform: rotateX(90deg) translateZ(calc(var(--diepte-connector2) / 2));
-}
-
-article > section:nth-of-type(5) ol:nth-of-type(1) li:nth-of-type(3) {
-  -webkit-transform: rotateY(180deg) translateZ(calc(var(--diepte-connector2) / 2));
-          transform: rotateY(180deg) translateZ(calc(var(--diepte-connector2) / 2));
-}
-
-article > section:nth-of-type(5) ol:nth-of-type(1) li:nth-of-type(4) {
-  -webkit-transform: rotateX(-90deg) translateZ(calc(var(--hoogte-connector2) - (var(--diepte-connector2) / 2)));
-          transform: rotateX(-90deg) translateZ(calc(var(--hoogte-connector2) - (var(--diepte-connector2) / 2)));
-}
-
-article > section:nth-of-type(5) ol:nth-of-type(1) li:nth-of-type(5) {
-  -webkit-transform: rotateY(90deg) translateZ(calc(var(--diepte-connector2) / -2));
-          transform: rotateY(90deg) translateZ(calc(var(--diepte-connector2) / -2));
-}
-
-article > section:nth-of-type(5) ol:nth-of-type(1) li:nth-of-type(6) {
-  -webkit-transform: rotateY(90deg) translateZ(calc(var(--breedte-connector2) - (var(--diepte-connector2) / 2)));
-          transform: rotateY(90deg) translateZ(calc(var(--breedte-connector2) - (var(--diepte-connector2) / 2)));
+article > section:nth-of-type(1) > ol {
+  width: var(--breedte);
+  height: var(--hoogte2);
 }
 
 article > section:nth-of-type(1) > ol > li {
@@ -545,6 +439,11 @@ article > section:nth-of-type(1) > ol > li:nth-of-type(5) {
 article > section:nth-of-type(1) > ol > li:nth-of-type(6) {
   -webkit-transform: rotateY(90deg) translateZ(calc((var(--breedte) - var(--diepte)) / 2));
           transform: rotateY(90deg) translateZ(calc((var(--breedte) - var(--diepte)) / 2));
+}
+
+article > section:nth-of-type(2) > ol {
+  width: var(--breedte);
+  height: var(--hoogte4);
 }
 
 article > section:nth-of-type(2) > ol > li {
@@ -601,6 +500,11 @@ article > section:nth-of-type(2) > ol > li:nth-of-type(6) {
 
 article > section:nth-of-type(2) > ol > li:nth-of-type(1) {
   padding: 1.25rem;
+}
+
+article > section:nth-of-type(3) > ol {
+  width: var(--breedte);
+  height: var(--hoogte3);
 }
 
 article > section:nth-of-type(3) > ol > li {
@@ -677,59 +581,120 @@ article > section:nth-of-type(4).open {
           transform: translateZ(0.983em) translateX(calc(100% + 0.85em)) rotate3d(0, 1, 0, -180deg);
 }
 
-article > section:nth-of-type(4) > ol {
-  height: var(--hoogte4);
-  width: var(--breedte);
+article > section:nth-of-type(4) > ol:nth-of-type(1) {
+  width: var(--breedte-connector);
+  height: var(--hoogte-connector);
 }
 
-article > section:nth-of-type(4) > ol > li {
+article > section:nth-of-type(4) > ol:nth-of-type(1) > li {
   position: absolute;
   background-color: #dc0a2d;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
 
-article > section:nth-of-type(4) > ol > li:nth-of-type(1), article > section:nth-of-type(4) > ol > li:nth-of-type(3) {
+article > section:nth-of-type(4) > ol:nth-of-type(1) > li:nth-of-type(1), article > section:nth-of-type(4) > ol:nth-of-type(1) > li:nth-of-type(3) {
+  height: var(--hoogte-connector);
+  width: var(--breedte-connector);
+}
+
+article > section:nth-of-type(4) > ol:nth-of-type(1) > li:nth-of-type(2), article > section:nth-of-type(4) > ol:nth-of-type(1) > li:nth-of-type(4) {
+  height: var(--diepte-connector);
+  width: var(--breedte-connector);
+}
+
+article > section:nth-of-type(4) > ol:nth-of-type(1) > li:nth-of-type(5), article > section:nth-of-type(4) > ol:nth-of-type(1) > li:nth-of-type(6) {
+  height: var(--hoogte-connector);
+  width: var(--diepte-connector);
+}
+
+article > section:nth-of-type(4) > ol:nth-of-type(1) > li:nth-of-type(1) {
+  -webkit-transform: rotateY(0deg) translateZ(calc(var(--diepte-connector) / 2));
+          transform: rotateY(0deg) translateZ(calc(var(--diepte-connector) / 2));
+}
+
+article > section:nth-of-type(4) > ol:nth-of-type(1) > li:nth-of-type(2) {
+  -webkit-transform: rotateX(90deg) translateZ(calc(var(--diepte-connector) / 2));
+          transform: rotateX(90deg) translateZ(calc(var(--diepte-connector) / 2));
+}
+
+article > section:nth-of-type(4) > ol:nth-of-type(1) > li:nth-of-type(3) {
+  -webkit-transform: rotateY(180deg) translateZ(calc(var(--diepte-connector) / 2));
+          transform: rotateY(180deg) translateZ(calc(var(--diepte-connector) / 2));
+}
+
+article > section:nth-of-type(4) > ol:nth-of-type(1) > li:nth-of-type(4) {
+  -webkit-transform: rotateX(-90deg) translateZ(calc((var(--hoogte-connector) - var(--diepte-connector)) / 2));
+          transform: rotateX(-90deg) translateZ(calc((var(--hoogte-connector) - var(--diepte-connector)) / 2));
+}
+
+article > section:nth-of-type(4) > ol:nth-of-type(1) > li:nth-of-type(5) {
+  -webkit-transform: rotateY(90deg) translateZ(calc(var(--diepte-connector) / -2));
+          transform: rotateY(90deg) translateZ(calc(var(--diepte-connector) / -2));
+}
+
+article > section:nth-of-type(4) > ol:nth-of-type(1) > li:nth-of-type(6) {
+  -webkit-transform: rotateY(90deg) translateZ(calc((var(--breedte-connector) - var(--diepte-connector)) / 2));
+          transform: rotateY(90deg) translateZ(calc((var(--breedte-connector) - var(--diepte-connector)) / 2));
+}
+
+article > section:nth-of-type(4) > ol:nth-of-type(1) li {
+  background-color: black;
+}
+
+article > section:nth-of-type(4) > ol:nth-of-type(2) {
+  width: var(--breedte);
+  height: var(--hoogte4);
+}
+
+article > section:nth-of-type(4) > ol:nth-of-type(2) > li {
+  position: absolute;
+  background-color: #dc0a2d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+article > section:nth-of-type(4) > ol:nth-of-type(2) > li:nth-of-type(1), article > section:nth-of-type(4) > ol:nth-of-type(2) > li:nth-of-type(3) {
   height: var(--hoogte4);
   width: var(--breedte);
 }
 
-article > section:nth-of-type(4) > ol > li:nth-of-type(2), article > section:nth-of-type(4) > ol > li:nth-of-type(4) {
+article > section:nth-of-type(4) > ol:nth-of-type(2) > li:nth-of-type(2), article > section:nth-of-type(4) > ol:nth-of-type(2) > li:nth-of-type(4) {
   height: var(--diepte2);
   width: var(--breedte);
 }
 
-article > section:nth-of-type(4) > ol > li:nth-of-type(5), article > section:nth-of-type(4) > ol > li:nth-of-type(6) {
+article > section:nth-of-type(4) > ol:nth-of-type(2) > li:nth-of-type(5), article > section:nth-of-type(4) > ol:nth-of-type(2) > li:nth-of-type(6) {
   height: var(--hoogte4);
   width: var(--diepte2);
 }
 
-article > section:nth-of-type(4) > ol > li:nth-of-type(1) {
+article > section:nth-of-type(4) > ol:nth-of-type(2) > li:nth-of-type(1) {
   -webkit-transform: rotateY(0deg) translateZ(calc(var(--diepte2) / 2));
           transform: rotateY(0deg) translateZ(calc(var(--diepte2) / 2));
 }
 
-article > section:nth-of-type(4) > ol > li:nth-of-type(2) {
+article > section:nth-of-type(4) > ol:nth-of-type(2) > li:nth-of-type(2) {
   -webkit-transform: rotateX(90deg) translateZ(calc(var(--diepte2) / 2));
           transform: rotateX(90deg) translateZ(calc(var(--diepte2) / 2));
 }
 
-article > section:nth-of-type(4) > ol > li:nth-of-type(3) {
+article > section:nth-of-type(4) > ol:nth-of-type(2) > li:nth-of-type(3) {
   -webkit-transform: rotateY(180deg) translateZ(calc(var(--diepte2) / 2));
           transform: rotateY(180deg) translateZ(calc(var(--diepte2) / 2));
 }
 
-article > section:nth-of-type(4) > ol > li:nth-of-type(4) {
+article > section:nth-of-type(4) > ol:nth-of-type(2) > li:nth-of-type(4) {
   -webkit-transform: rotateX(-90deg) translateZ(calc((var(--hoogte4) - var(--diepte2)) / 2));
           transform: rotateX(-90deg) translateZ(calc((var(--hoogte4) - var(--diepte2)) / 2));
 }
 
-article > section:nth-of-type(4) > ol > li:nth-of-type(5) {
+article > section:nth-of-type(4) > ol:nth-of-type(2) > li:nth-of-type(5) {
   -webkit-transform: rotateY(90deg) translateZ(calc(var(--diepte2) / -2));
           transform: rotateY(90deg) translateZ(calc(var(--diepte2) / -2));
 }
 
-article > section:nth-of-type(4) > ol > li:nth-of-type(6) {
+article > section:nth-of-type(4) > ol:nth-of-type(2) > li:nth-of-type(6) {
   -webkit-transform: rotateY(90deg) translateZ(calc((var(--breedte) - var(--diepte2)) / 2));
           transform: rotateY(90deg) translateZ(calc((var(--breedte) - var(--diepte2)) / 2));
 }
@@ -760,60 +725,122 @@ article > section:nth-of-type(5).open {
           transform: translateZ(calc(var(--diepte3) - var(--diepte))) translateY(calc(-100% - var(--hoogte-connector2))) rotate3d(1, 0, 0, -180deg);
 }
 
-article > section:nth-of-type(5) > ol {
-  height: var(--hoogte2);
-  width: var(--breedte);
-  bottom: 0.75em;
+article > section:nth-of-type(5) > ol:nth-of-type(1) {
+  width: var(--breedte-connector2);
+  height: var(--hoogte-connector2);
+  bottom: 0.15em;
 }
 
-article > section:nth-of-type(5) > ol > li {
+article > section:nth-of-type(5) > ol:nth-of-type(1) > li {
   position: absolute;
   background-color: #dc0a2d;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
 
-article > section:nth-of-type(5) > ol > li:nth-of-type(1), article > section:nth-of-type(5) > ol > li:nth-of-type(3) {
+article > section:nth-of-type(5) > ol:nth-of-type(1) > li:nth-of-type(1), article > section:nth-of-type(5) > ol:nth-of-type(1) > li:nth-of-type(3) {
+  height: var(--hoogte-connector2);
+  width: var(--breedte-connector2);
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(1) > li:nth-of-type(2), article > section:nth-of-type(5) > ol:nth-of-type(1) > li:nth-of-type(4) {
+  height: var(--diepte-connector2);
+  width: var(--breedte-connector2);
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(1) > li:nth-of-type(5), article > section:nth-of-type(5) > ol:nth-of-type(1) > li:nth-of-type(6) {
+  height: var(--hoogte-connector2);
+  width: var(--diepte-connector2);
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(1) > li:nth-of-type(1) {
+  -webkit-transform: rotateY(0deg) translateZ(calc(var(--diepte-connector2) / 2));
+          transform: rotateY(0deg) translateZ(calc(var(--diepte-connector2) / 2));
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(1) > li:nth-of-type(2) {
+  -webkit-transform: rotateX(90deg) translateZ(calc(var(--diepte-connector2) / 2));
+          transform: rotateX(90deg) translateZ(calc(var(--diepte-connector2) / 2));
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(1) > li:nth-of-type(3) {
+  -webkit-transform: rotateY(180deg) translateZ(calc(var(--diepte-connector2) / 2));
+          transform: rotateY(180deg) translateZ(calc(var(--diepte-connector2) / 2));
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(1) > li:nth-of-type(4) {
+  -webkit-transform: rotateX(-90deg) translateZ(calc((var(--hoogte-connector2) - var(--diepte-connector2)) / 2));
+          transform: rotateX(-90deg) translateZ(calc((var(--hoogte-connector2) - var(--diepte-connector2)) / 2));
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(1) > li:nth-of-type(5) {
+  -webkit-transform: rotateY(90deg) translateZ(calc(var(--diepte-connector2) / -2));
+          transform: rotateY(90deg) translateZ(calc(var(--diepte-connector2) / -2));
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(1) > li:nth-of-type(6) {
+  -webkit-transform: rotateY(90deg) translateZ(calc((var(--breedte-connector2) - var(--diepte-connector2)) / 2));
+          transform: rotateY(90deg) translateZ(calc((var(--breedte-connector2) - var(--diepte-connector2)) / 2));
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(1) li {
+  background-color: black;
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(2) {
+  width: var(--breedte);
+  height: var(--hoogte2);
+  bottom: 0.75em;
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li {
+  position: absolute;
+  background-color: #dc0a2d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1), article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(3) {
   height: var(--hoogte2);
   width: var(--breedte);
 }
 
-article > section:nth-of-type(5) > ol > li:nth-of-type(2), article > section:nth-of-type(5) > ol > li:nth-of-type(4) {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(2), article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(4) {
   height: var(--diepte);
   width: var(--breedte);
 }
 
-article > section:nth-of-type(5) > ol > li:nth-of-type(5), article > section:nth-of-type(5) > ol > li:nth-of-type(6) {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(5), article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(6) {
   height: var(--hoogte2);
   width: var(--diepte);
 }
 
-article > section:nth-of-type(5) > ol > li:nth-of-type(1) {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) {
   -webkit-transform: rotateY(0deg) translateZ(calc(var(--diepte) / 2));
           transform: rotateY(0deg) translateZ(calc(var(--diepte) / 2));
 }
 
-article > section:nth-of-type(5) > ol > li:nth-of-type(2) {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(2) {
   -webkit-transform: rotateX(90deg) translateZ(calc(var(--diepte) / 2));
           transform: rotateX(90deg) translateZ(calc(var(--diepte) / 2));
 }
 
-article > section:nth-of-type(5) > ol > li:nth-of-type(3) {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(3) {
   -webkit-transform: rotateY(180deg) translateZ(calc(var(--diepte) / 2));
           transform: rotateY(180deg) translateZ(calc(var(--diepte) / 2));
 }
 
-article > section:nth-of-type(5) > ol > li:nth-of-type(4) {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(4) {
   -webkit-transform: rotateX(-90deg) translateZ(calc((var(--hoogte2) - var(--diepte)) / 2));
           transform: rotateX(-90deg) translateZ(calc((var(--hoogte2) - var(--diepte)) / 2));
 }
 
-article > section:nth-of-type(5) > ol > li:nth-of-type(5) {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(5) {
   -webkit-transform: rotateY(90deg) translateZ(calc(var(--diepte) / -2));
           transform: rotateY(90deg) translateZ(calc(var(--diepte) / -2));
 }
 
-article > section:nth-of-type(5) > ol > li:nth-of-type(6) {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(6) {
   -webkit-transform: rotateY(90deg) translateZ(calc((var(--breedte) - var(--diepte)) / 2));
           transform: rotateY(90deg) translateZ(calc((var(--breedte) - var(--diepte)) / 2));
 }
@@ -851,7 +878,7 @@ article > section > ol {
   --breedte-connector2: calc(var(--breedte) / 2);
   --diepte-connector2: calc(var(--diepte) / 2);
   --hoogte-connector2: var(--diepte-connector2);
-  --perspective-size: 1500em;
+  --perspective-size: 37.5em;
 }
 
 *,
@@ -877,13 +904,11 @@ main {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-perspective: 37.5em;
-          perspective: 37.5em;
+  -webkit-perspective: var(--perspective-size);
+          perspective: var(--perspective-size);
 }
 
 article {
-  -webkit-perspective: var(--perspective-size);
-          perspective: var(--perspective-size);
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   width: var(--breedte);

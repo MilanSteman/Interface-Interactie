@@ -25,9 +25,8 @@ article {
         }
 
         &:nth-of-type(4) {
-            @include Slider(left);
+            @include Slider(left, var(--hoogte2));
 
-            top: var(--hoogte2);
             transform: translateZ(1em) translateX(100%) rotate3d(0, 1, 0, 0deg);
 
             &.open {
@@ -35,16 +34,22 @@ article {
             }
 
             & > ol {
-                @include Rechthoek(var(--breedte), var(--diepte2), var(--hoogte4));
-                height: var(--hoogte4);
-                width: var(--breedte);
+                &:nth-of-type(1) {
+                    @include Rechthoek(var(--breedte-connector), var(--diepte-connector), var(--hoogte-connector));
+                    li {
+                        background-color: black;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    @include Rechthoek(var(--breedte), var(--diepte2), var(--hoogte4));
+                }
             }
         }
 
         &:nth-of-type(5) {
-            @include Slider(bottom);
+            @include Slider(bottom, 0);
 
-            top: 0;
             flex-direction: column-reverse;
             transform: translateZ(0) translateY(-100%) rotate3d(1, 0, 0, -15deg);
 
@@ -54,10 +59,18 @@ article {
             }
 
             & > ol {
-                @include Rechthoek(var(--breedte), var(--diepte), var(--hoogte2));
-                height: var(--hoogte2);
-                width: var(--breedte);
-                bottom: 0.75em
+                &:nth-of-type(1) {
+                    @include Rechthoek(var(--breedte-connector2), var(--diepte-connector2), var(--hoogte-connector2));
+                    bottom: 0.15em;
+                    li {
+                        background-color: black;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    @include Rechthoek(var(--breedte), var(--diepte), var(--hoogte2));
+                    bottom: 0.75em;
+                }
             }
         }
     }

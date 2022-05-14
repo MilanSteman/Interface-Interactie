@@ -1,9 +1,8 @@
 @charset "UTF-8";
 
 /* Imports */
-@import "elements/screen",
-    "elements/nonagon", "elements/top-buttons", "elements/d-pad", "elements/long-buttons", "elements/sticks",
-    "elements/connector", "elements/connector2", "shapes/rectangles", "util/base";
+@import "elements/screen", "elements/nonagon", "elements/top-buttons", "elements/d-pad", "elements/long-buttons",
+    "elements/sticks", "shapes/rectangles", "util/base";
 
 :root {
     // Colors
@@ -41,7 +40,7 @@
     --diepte-connector2: calc(var(--diepte) / 2);
     --hoogte-connector2: var(--diepte-connector2);
 
-    --perspective-size: 1500em;
+    --perspective-size: 37.5em;
 }
 
 *,
@@ -65,11 +64,10 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    perspective: 37.5em;
+    perspective: var(--perspective-size);
 }
 
 article {
-    perspective: var(--perspective-size);
     transform-style: preserve-3d;
     width: var(--breedte);
     height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3));

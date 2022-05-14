@@ -1,4 +1,7 @@
 @mixin Rechthoek($breedte, $diepte, $hoogte) {
+    width: $breedte;
+    height: $hoogte;
+
     & > li {
         position: absolute;
         background-color: #dc0a2d;
@@ -50,10 +53,11 @@
     }
 }
 
-@mixin Slider($origin) {
+@mixin Slider($origin, $top) {
     position: absolute;
     display: flex;
     align-items: center;
     transition: 0.75s;
     transform-origin: $origin;
+    top: $top;
 }
