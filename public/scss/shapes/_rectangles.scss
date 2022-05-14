@@ -37,7 +37,7 @@ article {
                 &:nth-of-type(1) {
                     @include Rechthoek(var(--breedte-connector), var(--diepte-connector), var(--hoogte-connector));
                     li {
-                        background-color: black;
+                        background-color: var(--black);
                     }
                 }
 

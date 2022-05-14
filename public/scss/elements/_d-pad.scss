@@ -1,4 +1,6 @@
-article>section:nth-of-type(2)>ol>li:nth-of-type(1) section:nth-of-type(1) {
+@import "../util/mixins";
+
+article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) {
     width: 100%;
     height: 100%;
     display: flex;
@@ -13,11 +15,7 @@ article>section:nth-of-type(2)>ol>li:nth-of-type(1) section:nth-of-type(1) {
 
         &::before,
         &::after {
-            content: '';
-            position: absolute;
-            background-color: black;
-            box-shadow: 0 0 0.1em 0.1em #000;
-            z-index: -1;
+            @include Dark_BG_Shadow(true);
         }
 
         &::before {
@@ -39,7 +37,7 @@ article>section:nth-of-type(2)>ol>li:nth-of-type(1) section:nth-of-type(1) {
 
             li {
                 position: absolute;
-                width: calc(3.75em/3);
+                width: calc(3.75em / 3);
                 aspect-ratio: 1/1;
                 display: grid;
                 place-items: center;
@@ -48,7 +46,7 @@ article>section:nth-of-type(2)>ol>li:nth-of-type(1) section:nth-of-type(1) {
                     justify-self: start;
 
                     button {
-                        border-width: .125em 0 .125em .125em;
+                        border-width: 0.125em 0 0.125em 0.125em;
                     }
                 }
 
@@ -56,7 +54,7 @@ article>section:nth-of-type(2)>ol>li:nth-of-type(1) section:nth-of-type(1) {
                     align-self: start;
 
                     button {
-                        border-width: .125em .125em 0 .125em;
+                        border-width: 0.125em 0.125em 0 0.125em;
                     }
                 }
 
@@ -64,7 +62,7 @@ article>section:nth-of-type(2)>ol>li:nth-of-type(1) section:nth-of-type(1) {
                     justify-self: end;
 
                     button {
-                        border-width: .125em .125em .125em 0;
+                        border-width: 0.125em 0.125em 0.125em 0;
                     }
                 }
 
@@ -72,7 +70,7 @@ article>section:nth-of-type(2)>ol>li:nth-of-type(1) section:nth-of-type(1) {
                     align-self: end;
 
                     button {
-                        border-width: 0 .125em .125em .125em;
+                        border-width: 0 0.125em 0.125em 0.125em;
                     }
                 }
 
@@ -83,13 +81,10 @@ article>section:nth-of-type(2)>ol>li:nth-of-type(1) section:nth-of-type(1) {
                 }
 
                 button {
+                    @include Gray_Button(false);
                     width: 100%;
                     height: 100%;
-                    box-shadow: inset 0 0 5px 5px #00000050, 0 0 5px -2px #000000;
-                    border-style: solid;
-                    border-color: transparent;
-                    background: linear-gradient(#313641, #313641) padding-box,
-                        linear-gradient(to right, #57595a, #3b3c3e) border-box;
+                    border-radius: 0;
                 }
             }
         }

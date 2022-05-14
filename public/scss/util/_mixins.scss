@@ -40,7 +40,7 @@
         }
 
         &:nth-of-type(4) {
-            transform: rotateX(-90deg) translateZ(calc((#{$hoogte} - #{$diepte}) / 2));
+            transform: rotateX(-90deg) translateZ(calc(#{$hoogte} - #{$diepte} / 2));
         }
 
         &:nth-of-type(5) {
@@ -48,7 +48,7 @@
         }
 
         &:nth-of-type(6) {
-            transform: rotateY(90deg) translateZ(calc((#{$breedte} - #{$diepte}) / 2));
+            transform: rotateY(90deg) translateZ(calc(#{$breedte} - #{$diepte} / 2));
         }
     }
 }
@@ -60,4 +60,28 @@
     transition: 0.75s;
     transform-origin: $origin;
     top: $top;
+}
+
+@mixin Dark_BG_Shadow($psuedo-element) {
+    @if $psuedo-element {
+        content: "";
+    }
+
+    background-color: var(--black);
+    position: absolute;
+    box-shadow: var(--bg-dark-shadow);
+    z-index: -1;
+}
+
+@mixin Gray_Button($Bg-Shadow) {
+    @if $Bg-Shadow {
+        box-shadow: var(--dark-shadow-combined);
+    } @else {
+        box-shadow: var(--inset-dark-shadow);
+    }
+
+    background: var(--bg-gray-border);
+    border: 0.125em solid transparent;
+    border-radius: 0.125em;
+    transform: translateZ(0.25em);
 }
