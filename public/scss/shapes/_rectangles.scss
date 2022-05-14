@@ -1,0 +1,64 @@
+@import "../util/mixins";
+
+article {
+    & > section {
+        &:nth-of-type(1) {
+            & > ol {
+                @include Rechthoek(var(--breedte), var(--diepte), var(--hoogte2));
+            }
+        }
+
+        &:nth-of-type(2) {
+            & > ol {
+                @include Rechthoek(var(--breedte), var(--diepte2), var(--hoogte4));
+
+                & > li:nth-of-type(1) {
+                    padding: 1.25rem;
+                }
+            }
+        }
+
+        &:nth-of-type(3) {
+            & > ol {
+                @include Rechthoek(var(--breedte), var(--diepte3), var(--hoogte3));
+            }
+        }
+
+        &:nth-of-type(4) {
+            @include Slider(left);
+
+            top: var(--hoogte2);
+            transform: translateZ(1em) translateX(100%) rotate3d(0, 1, 0, 0deg);
+
+            &.open {
+                transform: translateZ(0.983em) translateX(calc(100% + 0.85em)) rotate3d(0, 1, 0, -180deg);
+            }
+
+            & > ol {
+                @include Rechthoek(var(--breedte), var(--diepte2), var(--hoogte4));
+                height: var(--hoogte4);
+                width: var(--breedte);
+            }
+        }
+
+        &:nth-of-type(5) {
+            @include Slider(bottom);
+
+            top: 0;
+            flex-direction: column-reverse;
+            transform: translateZ(0) translateY(-100%) rotate3d(1, 0, 0, -15deg);
+
+            &.open {
+                transform: translateZ(calc(var(--diepte3) - var(--diepte)))
+                    translateY(calc(-100% - var(--hoogte-connector2))) rotate3d(1, 0, 0, -180deg);
+            }
+
+            & > ol {
+                @include Rechthoek(var(--breedte), var(--diepte), var(--hoogte2));
+                height: var(--hoogte2);
+                width: var(--breedte);
+                bottom: 0.75em
+            }
+        }
+    }
+}

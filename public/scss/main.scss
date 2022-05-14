@@ -1,40 +1,47 @@
 @charset "UTF-8";
 
 /* Imports */
-@import "shapes/base", "shapes/rectangle", "shapes/mid-rectangle", "shapes/bottom-rectangle", "elements/screen", "elements/nonagon", "elements/top-buttons",
-"elements/d-pad", "elements/long-buttons", "elements/sticks", "elements/connector", "shapes/right-rectangle", "elements/connector2", "shapes/top-rectangle";
+@import "elements/screen",
+    "elements/nonagon", "elements/top-buttons", "elements/d-pad", "elements/long-buttons", "elements/sticks",
+    "elements/connector", "elements/connector2", "shapes/rectangles", "util/base";
 
 :root {
+    // Colors
+    --brown65: hsl(0deg, 47%, 55%);
+    --brown55: hsl(0deg, 47%, 50%);
+    --brown45: hsl(0deg, 47%, 45%);
+
+    // Ratio
     --BREEDTE-RATIO: 1.4;
 
     --DIEPTE-RATIO: 10;
     --DIEPTE-RATIO2: calc(var(--DIEPTE-RATIO) * 0.7);
     --DIEPTE-RATIO3: calc(var(--DIEPTE-RATIO) * 0.5);
 
-    --brown65: hsl(0deg, 47%, 55%);
-    --brown55: hsl(0deg, 47%, 50%);
-    --brown45: hsl(0deg, 47%, 45%);
-
+    // Hoogte
     --hoogte: 12.5em;
-    --hoogte2: 15em;
-    --hoogte3: calc((var(--hoogte)) / 3);
-    --hoogte4: 10.5em;
+    --hoogte2: calc(var(--hoogte) * 1.2);
+    --hoogte3: calc(var(--hoogte) * 0.33);
+    --hoogte4: calc(var(--hoogte) * 0.7);
 
+    // Lengte
     --breedte: calc(var(--hoogte) * var(--BREEDTE-RATIO));
 
+    // Breedte
     --diepte: calc(var(--hoogte) / var(--DIEPTE-RATIO));
     --diepte2: calc(var(--hoogte) / var(--DIEPTE-RATIO2));
     --diepte3: calc(var(--hoogte) / var(--DIEPTE-RATIO3));
 
+    // Connectors
     --hoogte-connector: calc(var(--hoogte2) / 2);
     --diepte-connector: calc(var(--diepte2) / 2);
-    --breedte-connector : var(--diepte-connector);
+    --breedte-connector: var(--diepte-connector);
 
-    --breedte-connector2: calc(var(var(--breedte)) / 2)
+    --breedte-connector2: calc(var(--breedte) / 2);
     --diepte-connector2: calc(var(--diepte) / 2);
     --hoogte-connector2: var(--diepte-connector2);
 
-    --perspective-size: 150em;
+    --perspective-size: 1500em;
 }
 
 *,
@@ -47,9 +54,13 @@
     list-style: none;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 main {
     width: var(--breedte);
-    height: 27.5em;
+    height: var(--breedte);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -60,13 +71,13 @@ main {
 article {
     perspective: var(--perspective-size);
     transform-style: preserve-3d;
-    transform: rotate3d(1, 1, 1, 360deg);
     width: var(--breedte);
     height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3));
     position: absolute;
-    top: 0;
-    left: 0;
-    background: linear-gradient(to top right, #9f3a3a, #b46969, #a64747, #9f3a3a);
+    top: 75%;
+    left: 50%;
+    transform: rotate3d(1, 1, 1, 360deg) translate(-50%, -50%);
+    background-color: #dc0a2d;
     animation: rotate 2s linear infinite;
 
     section {
@@ -78,7 +89,8 @@ article {
         height: var(--hoogte2);
     }
 
-    section:nth-of-type(2), section:nth-of-type(4) {
+    section:nth-of-type(2),
+    section:nth-of-type(4) {
         height: var(--hoogte4);
     }
 
