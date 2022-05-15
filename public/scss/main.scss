@@ -79,6 +79,16 @@
     display: none;
 }
 
+figure {
+    height: 100%;
+    width: 100%;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
 main {
     width: var(--breedte);
     height: var(--breedte);

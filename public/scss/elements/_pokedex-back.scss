@@ -11,7 +11,7 @@ article {
                         position: absolute;
                         top: 0;
                         left: 50%;
-                        transform: translate(-50%, -50%) translateZ(.25em);
+                        transform: translate(-50%, -50%) translateZ(0.25em);
 
                         width: 33%;
                         aspect-ratio: 1/1;
@@ -23,14 +23,14 @@ article {
                     &::after {
                         content: "";
                         position: absolute;
-                        bottom: 33%;
+                        top: 0%;
                         left: 50%;
-                        transform: translateX(-50%) translateZ(.25em);
+                        transform: translate(-50%, -50%) translateZ(0.25em);
 
                         width: 66%;
                         aspect-ratio: 1/1;
                         border-radius: 50%;
-                        border: .5em solid var(--black);
+                        border: 0.5em solid var(--black);
                     }
                 }
             }
@@ -46,7 +46,7 @@ article {
                         position: absolute;
                         top: 0;
                         left: 50%;
-                        transform: translate(-50%, -50%) translateZ(.25em);
+                        transform: translate(-50%, -50%) translateZ(0.25em);
 
                         width: 33%;
                         aspect-ratio: 1/1;
@@ -57,14 +57,13 @@ article {
                     &::after {
                         content: "";
                         position: absolute;
-                        bottom: 61%;
+                        top: 0%;
                         left: 50%;
-                        transform: translateX(-50%) translateZ(.25em);
-
+                        transform: translate(-50%, -50%) translateZ(0.25em);
                         width: 66%;
                         aspect-ratio: 1/1;
                         border-radius: 50%;
-                        border: .5em solid var(--black);
+                        border: 0.5em solid var(--black);
                     }
                 }
             }
