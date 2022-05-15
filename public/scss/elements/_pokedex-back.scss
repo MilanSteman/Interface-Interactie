@@ -1,0 +1,73 @@
+article {
+    & > section {
+        // Bottom
+        &:nth-of-type(4) {
+            & > ol:nth-of-type(2) {
+                & > li:nth-of-type(3) {
+                    overflow: hidden;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%, -50%) translateZ(.25em);
+
+                        width: 33%;
+                        aspect-ratio: 1/1;
+                        border-radius: 50%;
+
+                        background: radial-gradient(circle, var(--blackpurple) 0%, var(--black) 100%);
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 33%;
+                        left: 50%;
+                        transform: translateX(-50%) translateZ(.25em);
+
+                        width: 66%;
+                        aspect-ratio: 1/1;
+                        border-radius: 50%;
+                        border: .5em solid var(--black);
+                    }
+                }
+            }
+        }
+
+        // Top
+        &:nth-of-type(5) {
+            & > ol:nth-of-type(2) {
+                & > li:nth-of-type(3) {
+                    overflow: hidden;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%, -50%) translateZ(.25em);
+
+                        width: 33%;
+                        aspect-ratio: 1/1;
+                        border-radius: 50%;
+                        background: radial-gradient(circle, var(--blackpurple) 0%, var(--black) 100%);
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 61%;
+                        left: 50%;
+                        transform: translateX(-50%) translateZ(.25em);
+
+                        width: 66%;
+                        aspect-ratio: 1/1;
+                        border-radius: 50%;
+                        border: .5em solid var(--black);
+                    }
+                }
+            }
+        }
+    }
+}

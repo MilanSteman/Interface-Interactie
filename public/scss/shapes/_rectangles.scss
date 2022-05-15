@@ -3,7 +3,7 @@
 article {
     & > section {
         &:nth-of-type(1) {
-            & > ol {
+            & > ol:nth-of-type(1) {
                 @include Rechthoek(var(--breedte), var(--diepte), var(--hoogte2));
             }
         }
@@ -37,7 +37,7 @@ article {
                 &:nth-of-type(1) {
                     @include Rechthoek(var(--breedte-connector), var(--diepte-connector), var(--hoogte-connector));
                     li {
-                        background-color: var(--black);
+                        background-color: var(--gray);
                     }
                 }
 
@@ -63,7 +63,7 @@ article {
                     @include Rechthoek(var(--breedte-connector2), var(--diepte-connector2), var(--hoogte-connector2));
                     bottom: 0.15em;
                     li {
-                        background-color: black;
+                        background-color: var(--gray);
                     }
                 }
 

@@ -24,7 +24,6 @@ dPadDown.addEventListener("mousedown", () => dPad.classList.add("down"));
 dPadDown.addEventListener("mouseup", () => dPad.classList.remove("down"));
 dPadDown.addEventListener("mouseout", () => dPad.classList.remove("down"));
 
-
 topOpenRectangle.addEventListener("click", () => {
     topOpenRectangle.classList.toggle("open");
 });

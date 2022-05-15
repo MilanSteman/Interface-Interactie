@@ -73,8 +73,8 @@
     z-index: -1;
 }
 
-@mixin Gray_Button($Bg-Shadow) {
-    @if $Bg-Shadow {
+@mixin Gray_Button($bg-shadow, $active) {
+    @if $bg-shadow {
         box-shadow: var(--dark-shadow-combined);
     } @else {
         box-shadow: var(--inset-dark-shadow);
@@ -84,4 +84,15 @@
     border: 0.125em solid transparent;
     border-radius: 0.125em;
     transform: translateZ(0.25em);
+    transition: 0.35s;
+
+    &:active {
+        @if $active {
+            @if $bg-shadow {
+                box-shadow: var(--dark-shadow-combined), var(--clicked-box-shadow1), var(--clicked-box-shadow2);
+            } @else {
+                box-shadow: var(--inset-dark-shadow), var(--clicked-box-shadow1), var(--clicked-box-shadow2);
+            }
+        }
+    }
 }
