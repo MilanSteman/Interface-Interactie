@@ -8,22 +8,29 @@ const dPadDown = document.querySelector("article > section:nth-of-type(2) > ol >
 
 const dPad = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ol");
 
+const screenTop = document.querySelector("article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section");
+const screenBottom = document.querySelector("article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section");
+
 const pokeListTop = document.querySelector("article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section ol");
 const pokeListTopChildren = document.querySelectorAll("article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section ol > li");
 
 const pokeListBottom = document.querySelector("article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol");
 const pokeListBottomChildren = document.querySelectorAll("article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li");
 
+const longButton = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) > ol:nth-of-type(1) li:nth-of-type(1) button");
 let pokeCounter = 0;
 
-console.log(pokeListTop)
+longButton.addEventListener("click", () => {
+    screenTop.classList.toggle("online");
+    screenBottom.classList.toggle("online");
+});
+
 dPadLeft.addEventListener("mousedown", () => dPad.classList.add("left"));
 dPadLeft.addEventListener("mouseup", () => dPad.classList.remove("left"));
 dPadLeft.addEventListener("mouseout", () => dPad.classList.remove("left"));
 
 const goNext = () => {
     dPad.classList.add("down");
-    console.log(pokeListBottomChildren.length)
     if (pokeCounter === pokeListBottomChildren.length - 1) {
         pokeCounter = 0;
     } else {
@@ -114,7 +121,7 @@ document.addEventListener("keydown", (event) => {
             break;
         case "ArrowRight":
             dPad.classList.add("right");
-            break;    
+            break;
         case "ArrowUp":
             goPrevious();
             break;
@@ -133,7 +140,7 @@ document.addEventListener("keyup", (event) => {
             break;
         case "ArrowRight":
             dPad.classList.remove("right");
-            break;    
+            break;
         case "ArrowUp":
             dPad.classList.remove("up");
             break;

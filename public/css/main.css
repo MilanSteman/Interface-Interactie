@@ -18,16 +18,26 @@ article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > secti
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: #dbdbdb;
   padding: 0.625em;
   gap: 0.625em;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
 }
 
 article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol {
-  overflow: hidden;
+  opacity: 0;
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online {
+  background: #dbdbdb;
+}
+
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol {
+  overflow: hidden;
+  opacity: 1;
+}
+
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -37,58 +47,58 @@ article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > secti
   overflow: scroll;
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li + li {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li + li {
   margin-top: 0.625em;
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li:nth-of-type(2) section ul li {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li:nth-of-type(2) section ul li {
   background-color: var(--water);
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li:nth-of-type(3) section ul li {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li:nth-of-type(3) section ul li {
   background-color: var(--electric);
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li:nth-of-type(4) section ul li {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li:nth-of-type(4) section ul li {
   background-color: var(--fire);
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li:nth-of-type(5) section ul li {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li:nth-of-type(5) section ul li {
   background-color: var(--psychic);
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li:nth-of-type(6) section ul li {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li:nth-of-type(6) section ul li {
   background-color: var(--dark);
   color: #dbdbdb;
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li:nth-of-type(7) section ul li {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li:nth-of-type(7) section ul li {
   background-color: var(--grass);
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li:nth-of-type(8) section ul li {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li:nth-of-type(8) section ul li {
   background-color: var(--ice);
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li:nth-of-type(9) section ul li {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li:nth-of-type(9) section ul li {
   background-color: var(--fairy);
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li section {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li section {
   width: 50%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li section ul {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li section ul {
   margin: 0.25rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li section ul li {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li section ul li {
   font-size: 0.4375em;
   background-color: var(--normal);
   -webkit-box-shadow: 0 0 0.125em var(--black);
@@ -98,19 +108,19 @@ article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > secti
   padding: 0.25em 1em;
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li section p {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li section p {
   font-size: 0.5625em;
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li section p:first-of-type {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li section p:first-of-type {
   color: var(--gray);
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li section p:last-of-type {
-  margin-top: .75em;
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li section p:last-of-type {
+  margin-top: 0.75em;
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li figure {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -144,17 +154,27 @@ article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > secti
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: #dbdbdb;
   padding: 0.625em;
   gap: 0.625em;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
 }
 
 article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section ol {
-  overflow: hidden;
-  width: 100%;
+  opacity: 0;
 }
 
-article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section ol > li {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online {
+  background: #dbdbdb;
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol {
+  overflow: hidden;
+  width: 100%;
+  opacity: 1;
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li {
   width: 100%;
   height: 25%;
   display: -webkit-box;
@@ -164,30 +184,30 @@ article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > secti
   overflow: hidden;
 }
 
-article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section ol > li.current {
-  border-radius: .125em;
-  border: .125em solid #dc0a2d;
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li.current {
+  border-radius: 0.125em;
+  border: 0.125em solid #dc0a2d;
 }
 
-article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section ol > li + li {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li + li {
   margin-top: 0.625em;
 }
 
-article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section ol > li section {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li section {
   width: 50%;
   height: 100%;
 }
 
-article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section ol > li section p {
-  margin-left: .5em;
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li section p {
+  margin-left: 0.5em;
   font-size: 0.5625em;
 }
 
-article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section ol > li section p:first-of-type {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li section p:first-of-type {
   color: var(--gray);
 }
 
-article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section ol > li figure {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -204,7 +224,7 @@ article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > secti
   height: 100%;
 }
 
-article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section ol > li figure img {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li figure img {
   height: 150%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
