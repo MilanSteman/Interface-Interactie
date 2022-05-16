@@ -1,26 +1,72 @@
 @import "../util/mixins";
 
 article {
-    & > section {
+    &>section {
+
         // Bottom
         &:nth-of-type(1) {
-            & > ol:nth-of-type(1) {
-                & > li:nth-of-type(1) {
-                    section {
+            &>ol:nth-of-type(1) {
+                &>li:nth-of-type(1) {
+
+                    &>section {
                         @include Gray_Button(true, false);
                         width: 100%;
                         height: 100%;
                         border-radius: 0.5em;
+                        max-height: 100%;
+                        overflow: scroll;
 
-                        display: grid;
-                        grid-template-columns: repeat(2, 1fr);
+                        display: flex;
                         background: #dbdbdb;
                         padding: 0.625em;
+                        gap: 0.625em;
 
-                        figure {
-                            grid-column: span 1;
-                            display: grid;
-                            place-items: center;
+                        ol {
+                            overflow: hidden;                                                        
+                            &>li {
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                gap: 0.625em;
+                                overflow: scroll;
+
+                                &+ li {
+                                    margin-top: 0.625em;
+                                }
+
+                                section {
+                                    width: 50%;
+                                    height: fit-content;
+
+                                    ul {
+                                        margin: .25rem 0;
+                                        display: flex;
+
+                                        li {
+                                            font-size: .4375em;
+                                            background-color: bisque;
+                                            border-radius: 5em;
+                                            padding: .25em .5em;
+                                        }
+                                    }
+
+                                    p {
+                                        font-size: .5625em;
+
+                                        &:first-of-type {
+                                            color: var(--gray);
+                                        }
+                                    }
+                                }
+
+                                figure {
+                                    display: grid;
+                                    place-items: center;
+                                    position: sticky;
+                                    top: 0;
+                                    width: 50%;
+                                }
+                            }
                         }
                     }
                 }
@@ -28,8 +74,8 @@ article {
         }
 
         &:nth-of-type(5) {
-            & > ol:nth-of-type(2) {
-                & > li:nth-of-type(1) {
+            &>ol:nth-of-type(2) {
+                &>li:nth-of-type(1) {
                     section {
                         @include Gray_Button(true, false);
                         width: 100%;

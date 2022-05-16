@@ -1,5 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /* Imports */
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) section {
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section {
   -webkit-box-shadow: var(--dark-shadow-combined);
           box-shadow: var(--dark-shadow-combined);
   background: var(--bg-gray-border);
@@ -12,19 +13,71 @@ article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) section
   width: 100%;
   height: 100%;
   border-radius: 0.5em;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  max-height: 100%;
+  overflow: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background: #dbdbdb;
   padding: 0.625em;
+  gap: 0.625em;
 }
 
-article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) section figure {
-  grid-column: span 1;
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol {
+  overflow: hidden;
+}
+
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.625em;
+  overflow: scroll;
+}
+
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li + li {
+  margin-top: 0.625em;
+}
+
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li section {
+  width: 50%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li section ul {
+  margin: .25rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li section ul li {
+  font-size: .4375em;
+  background-color: bisque;
+  border-radius: 5em;
+  padding: .25em .5em;
+}
+
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li section p {
+  font-size: .5625em;
+}
+
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li section p:first-of-type {
+  color: var(--gray);
+}
+
+article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li figure {
   display: -ms-grid;
   display: grid;
   place-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 50%;
 }
 
 article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) section {
@@ -976,6 +1029,7 @@ article > section:nth-of-type(1) > ol:nth-of-type(2) li {
   --diepte-connector2: calc(var(--diepte) / 2);
   --hoogte-connector2: var(--diepte-connector2);
   --perspective-size: calc(var(--hoogte) * 3);
+  --sans: 'Inter', Helvetica, Arial, sans-serif;
 }
 
 *,
@@ -991,6 +1045,10 @@ article > section:nth-of-type(1) > ol:nth-of-type(2) li {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+body {
+  font-family: var(--sans);
 }
 
 figure {
