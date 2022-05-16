@@ -8,23 +8,29 @@ const dPadDown = document.querySelector("article > section:nth-of-type(2) > ol >
 
 const dPad = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ol");
 
-const pokeListBottom = document.querySelector("article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol");
-const pokeListBottomAllChildren = document.querySelectorAll("article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li");
-let pokeListBottomCounter = 0;
+const pokeListTop = document.querySelector("article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section ol");
+const pokeListTopChildren = document.querySelectorAll("article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section ol > li");
 
+const pokeListBottom = document.querySelector("article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol");
+const pokeListBottomChildren = document.querySelectorAll("article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li");
+let pokeCounter = 0;
+console.log(pokeListTop)
 dPadLeft.addEventListener("mousedown", () => dPad.classList.add("left"));
 dPadLeft.addEventListener("mouseup", () => dPad.classList.remove("left"));
 dPadLeft.addEventListener("mouseout", () => dPad.classList.remove("left"));
 
 dPadUp.addEventListener("mousedown", () => {
     dPad.classList.add("up");
-    if (pokeListBottomCounter === 0) {
-        pokeListBottomCounter = pokeListBottomAllChildren.length - 1;
+    if (pokeCounter === 0) {
+        pokeCounter = pokeListBottomChildren.length - 1;
+        pokeListTop.scroll({top: pokeListTopChildren[pokeCounter].offsetTop, left: 0, behavior: 'smooth'});
+        pokeListBottom.scroll({top: pokeListBottomChildren[pokeCounter].offsetTop, left: 0, behavior: 'smooth'});
     } else {
-        pokeListBottomCounter--;
+        pokeCounter--;
+        pokeListTop.scroll({top: pokeListTopChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth'});
+        pokeListBottom.scroll({top: pokeListBottomChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth'});
     } 
-    pokeListBottom.scroll({top: pokeListBottomAllChildren[pokeListBottomCounter].offsetTop, left: 0, behavior: 'smooth'});
-    console.log(pokeListBottomCounter);
+    console.log(pokeCounter);
 });
 dPadUp.addEventListener("mouseup", () => dPad.classList.remove("up"));
 dPadUp.addEventListener("mouseout", () => dPad.classList.remove("up"));
@@ -35,15 +41,15 @@ dPadRight.addEventListener("mouseout", () => dPad.classList.remove("right"));
 
 dPadDown.addEventListener("mousedown", () => {
     dPad.classList.add("down");
-    console.log(pokeListBottomAllChildren.length)
-    if (pokeListBottomCounter === pokeListBottomAllChildren.length - 1) {
-        pokeListBottomCounter = 0;
+    console.log(pokeListBottomChildren.length)
+    if (pokeCounter === pokeListBottomChildren.length - 1) {
+        pokeCounter = 0;
     } else {
-        pokeListBottomCounter++;
+        pokeCounter++;
     }
-    pokeListBottom.scroll({top: pokeListBottomAllChildren[pokeListBottomCounter].offsetTop, left: 0, behavior: 'smooth'});
-    console.log(pokeListBottomCounter);
-
+    pokeListTop.scroll({top: pokeListTopChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth'});
+    pokeListBottom.scroll({top: pokeListBottomChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth'});
+    console.log(pokeCounter);
 });
 dPadDown.addEventListener("mouseup", () => dPad.classList.remove("down"));
 dPadDown.addEventListener("mouseout", () => dPad.classList.remove("down"));
