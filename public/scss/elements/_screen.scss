@@ -105,6 +105,10 @@ article {
                                         &:first-of-type {
                                             color: var(--gray);
                                         }
+
+                                        &:last-of-type {
+                                            margin-top: .75em;
+                                        }
                                     }
                                 }
 
@@ -140,86 +144,30 @@ article {
 
                         ol {
                             overflow: hidden;
+                            width: 100%;
                             
                             & > li {
                                 width: 100%;
-                                height: 20%;
+                                height: 25%;
                                 display: flex;
                                 gap: 0.625em;
                                 overflow: hidden;
+
+                                &.current {
+                                    border-radius: .125em;
+                                    border: .125em solid #dc0a2d;
+                                }
 
                                 & + li {
                                     margin-top: 0.625em;
                                 }
 
-                                &:nth-of-type(2) {
-                                    section ul li {
-                                        background-color: var(--water);
-                                    }
-                                }
-
-                                &:nth-of-type(3) {
-                                    section ul li {
-                                        background-color: var(--electric);
-                                    }
-                                }
-
-                                &:nth-of-type(4) {
-                                    section ul li {
-                                        background-color: var(--fire);
-                                    }
-                                }
-
-                                &:nth-of-type(5) {
-                                    section ul li {
-                                        background-color: var(--psychic);
-                                    }
-                                }
-
-                                &:nth-of-type(6) {
-                                    section ul li {
-                                        background-color: var(--dark);
-                                        color: #dbdbdb;
-                                    }
-                                }
-
-                                &:nth-of-type(7) {
-                                    section ul li {
-                                        background-color: var(--grass);
-                                    }
-                                }
-
-                                &:nth-of-type(8) {
-                                    section ul li {
-                                        background-color: var(--ice);
-                                    }
-                                }
-
-                                &:nth-of-type(9) {
-                                    section ul li {
-                                        background-color: var(--fairy);
-                                    }
-                                }
-
                                 section {
                                     width: 50%;
                                     height: 100%;
-
-                                    ul {
-                                        margin: 0.25rem 0;
-                                        display: flex;
-
-                                        li {
-                                            font-size: 0.4375em;
-                                            background-color: var(--normal);
-                                            box-shadow: 0 0 0.125em var(--black);
-                                            margin-left: 0.125em;
-                                            border-radius: 5em;
-                                            padding: 0.25em 1em;
-                                        }
-                                    }
-
+                                    
                                     p {
+                                        margin-left: .5em;
                                         font-size: 0.5625em;
 
                                         &:first-of-type {
@@ -231,11 +179,16 @@ article {
                                 figure {
                                     display: flex;
                                     align-items: center;
-                                    justify-content: center;
+                                    justify-content: flex-end;
                                     position: sticky;
                                     top: 0;
                                     width: 50%;
                                     height: 100%;
+
+                                    img {
+                                        height: 150%;
+                                        width: fit-content;
+                                    }
                                 }
                             }
                         }
