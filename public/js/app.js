@@ -21,7 +21,28 @@ dPadLeft.addEventListener("mousedown", () => dPad.classList.add("left"));
 dPadLeft.addEventListener("mouseup", () => dPad.classList.remove("left"));
 dPadLeft.addEventListener("mouseout", () => dPad.classList.remove("left"));
 
-dPadUp.addEventListener("mousedown", () => {
+const goNext = () => {
+    dPad.classList.add("down");
+    console.log(pokeListBottomChildren.length)
+    if (pokeCounter === pokeListBottomChildren.length - 1) {
+        pokeCounter = 0;
+    } else {
+        pokeCounter++;
+    }
+
+    for (let i = 0; i < pokeListTopChildren.length; i++) {
+        if (i === pokeCounter) {
+            pokeListTopChildren[i].classList.add("current");
+        } else {
+            pokeListTopChildren[i].classList.remove("current");
+        }
+    }
+
+    pokeListTop.scroll({ top: pokeListTopChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth' });
+    pokeListBottom.scroll({ top: pokeListBottomChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth' });
+}
+
+const goPrevious = () => {
     dPad.classList.add("up");
     if (pokeCounter === 0) {
         pokeCounter = pokeListBottomChildren.length - 1;
@@ -50,7 +71,10 @@ dPadUp.addEventListener("mousedown", () => {
         pokeListTop.scroll({ top: pokeListTopChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth' });
         pokeListBottom.scroll({ top: pokeListBottomChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth' });
     }
-    console.log(pokeCounter);
+}
+
+dPadUp.addEventListener("mousedown", () => {
+    goPrevious();
 });
 dPadUp.addEventListener("mouseup", () => dPad.classList.remove("up"));
 dPadUp.addEventListener("mouseout", () => dPad.classList.remove("up"));
@@ -60,25 +84,7 @@ dPadRight.addEventListener("mouseup", () => dPad.classList.remove("right"));
 dPadRight.addEventListener("mouseout", () => dPad.classList.remove("right"));
 
 dPadDown.addEventListener("mousedown", () => {
-    dPad.classList.add("down");
-    console.log(pokeListBottomChildren.length)
-    if (pokeCounter === pokeListBottomChildren.length - 1) {
-        pokeCounter = 0;
-    } else {
-        pokeCounter++;
-    }
-
-    for (let i = 0; i < pokeListTopChildren.length; i++) {
-        if (i === pokeCounter) {
-            pokeListTopChildren[i].classList.add("current");
-        } else {
-            pokeListTopChildren[i].classList.remove("current");
-        }
-    }
-
-    pokeListTop.scroll({ top: pokeListTopChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth' });
-    pokeListBottom.scroll({ top: pokeListBottomChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth' });
-    console.log(pokeCounter);
+    goNext();
 });
 dPadDown.addEventListener("mouseup", () => dPad.classList.remove("down"));
 dPadDown.addEventListener("mouseout", () => dPad.classList.remove("down"));
@@ -98,3 +104,41 @@ for (let i = 0; i < pokeListTopChildren.length; i++) {
         pokeListTopChildren[i].classList.remove("current");
     }
 }
+
+document.addEventListener("keydown", (event) => {
+    const key = event.key;
+
+    switch (key) {
+        case "ArrowLeft":
+            dPad.classList.add("left");
+            break;
+        case "ArrowRight":
+            dPad.classList.add("right");
+            break;    
+        case "ArrowUp":
+            goPrevious();
+            break;
+        case "ArrowDown":
+            goNext();
+            break;
+    }
+})
+
+document.addEventListener("keyup", (event) => {
+    const key = event.key;
+
+    switch (key) {
+        case "ArrowLeft":
+            dPad.classList.remove("left");
+            break;
+        case "ArrowRight":
+            dPad.classList.remove("right");
+            break;    
+        case "ArrowUp":
+            dPad.classList.remove("up");
+            break;
+        case "ArrowDown":
+            dPad.classList.remove("down")
+            break;
+    }
+})
