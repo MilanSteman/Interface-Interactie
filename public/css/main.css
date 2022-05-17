@@ -176,7 +176,7 @@ article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > secti
 
 article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li {
   width: 100%;
-  height: 25%;
+  height: calc((100% - (2 * 0.625em)) / 3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -198,6 +198,16 @@ article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > secti
 
 article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li section {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li section p {
@@ -1151,6 +1161,7 @@ article > section:nth-of-type(1) > ol:nth-of-type(2) li {
   --grass: #78c850;
   --dark: #3d2c22;
   --water: #6890f0;
+  --fairy: #ca7889;
   --bg-gray-border: linear-gradient(var(--gray), var(--gray)) padding-box,
         linear-gradient(to right, var(--lightgray), var(--gray_darker)) border-box;
   --bg-dark-shadow: 0 0 0.125em 0.125em var(--black);
@@ -1199,6 +1210,60 @@ article > section:nth-of-type(1) > ol:nth-of-type(2) li {
 
 body {
   font-family: var(--sans);
+}
+
+body::before {
+  -webkit-transition: .7s;
+  transition: .7s;
+  content: "";
+  height: 80vh;
+  aspect-ratio: 1/1;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
+  -webkit-filter: blur(6em);
+          filter: blur(6em);
+  opacity: .8;
+}
+
+body.normal::before {
+  background-color: var(--normal);
+}
+
+body.water::before {
+  background-color: var(--water);
+}
+
+body.electric::before {
+  background-color: var(--electric);
+}
+
+body.fire::before {
+  background-color: var(--fire);
+}
+
+body.psychic::before {
+  background-color: var(--psychic);
+}
+
+body.dark::before {
+  background-color: var(--dark);
+}
+
+body.grass::before {
+  background-color: var(--grass);
+}
+
+body.ice::before {
+  background-color: var(--ice);
+}
+
+body.fairy::before {
+  background-color: var(--fairy);
 }
 
 button:not([disabled]) {
@@ -1269,7 +1334,12 @@ article section:nth-of-type(3) {
           transform: translateZ(calc((var(--diepte3) - var(--diepte)) / 2));
 }
 
+article section:nth-of-type(4) {
+  cursor: pointer;
+}
+
 article section:nth-of-type(5) {
   height: var(--hoogte2);
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */
