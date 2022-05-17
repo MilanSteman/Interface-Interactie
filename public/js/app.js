@@ -1,4 +1,5 @@
 const background = document.querySelector("body");
+const main = document.querySelector("main");
 const rightOpenRectangle = document.querySelector("article>section:nth-of-type(4)");
 const topOpenRectangle = document.querySelector("article>section:nth-of-type(5)");
 
@@ -120,8 +121,12 @@ dPadDown.addEventListener("mousedown", () => {
 dPadDown.addEventListener("mouseup", () => dPad.classList.remove("down"));
 dPadDown.addEventListener("mouseout", () => dPad.classList.remove("down"));
 
-topOpenRectangle.addEventListener("click", () => {
+const openTopRectangle = () => {
     topOpenRectangle.classList.toggle("open");
+}
+
+topOpenRectangle.addEventListener("click", () => {
+    openTopRectangle();
 });
 
 rightOpenRectangle.addEventListener("click", () => {
@@ -179,7 +184,7 @@ document.addEventListener("keyup", (event) => {
                 rightOpenRectangle.classList.toggle("open");
                 break;
             case topOpenRectangle:
-                topOpenRectangle.classList.toggle("open");
+                openTopRectangle();
                 break;
             case dPadUp:
                 goPrevious();

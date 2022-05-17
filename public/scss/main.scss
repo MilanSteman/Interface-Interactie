@@ -53,7 +53,7 @@
     --DIEPTE-RATIO3: calc(var(--DIEPTE-RATIO) * 0.5);
 
     // Hoogte
-    --hoogte: 12.5em;
+    --hoogte: calc(100vh / 4.685);
     --hoogte2: calc(var(--hoogte) * 1.2);
     --hoogte3: calc(var(--hoogte) * 0.33);
     --hoogte4: calc(var(--hoogte) * 0.7);
@@ -97,9 +97,12 @@
 
 body {
     font-family: var(--sans);
+    overflow: hidden;
+    max-width: 100vw;
+    max-height: 100vh;
 
     &::before {
-        transition: .7s;
+        transition: 0.7s;
         content: "";
         height: 80vh;
         aspect-ratio: 1/1;
@@ -110,7 +113,7 @@ body {
         transform: translate(-50%, -50%);
         z-index: -1;
         filter: blur(6em);
-        opacity: .8;
+        opacity: 0.8;
     }
 
     &.normal {
@@ -183,23 +186,21 @@ figure {
 }
 
 main {
+    height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3));
     width: var(--breedte);
-    height: var(--breedte);
+
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -75%);
     perspective: var(--perspective-size);
 }
 
 article {
     transform-style: preserve-3d;
-    width: var(--breedte);
-    height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3));
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: rotate3d(1, 1, 1, 360deg) translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    transform: rotate3d(1, 1, 1, 360deg);
     background-color: #dc0a2d;
     animation: rotate 2s linear infinite;
 
