@@ -53,13 +53,13 @@
     --DIEPTE-RATIO3: calc(var(--DIEPTE-RATIO) * 0.5);
 
     // Hoogte
-    --hoogte: calc(100vh / 4.5);
+    --hoogte: calc(100vh / 4);
     --hoogte2: calc(var(--hoogte) * 1.2);
     --hoogte3: calc(var(--hoogte) * 0.33);
     --hoogte4: calc(var(--hoogte) * 0.7);
 
     // Lengte
-    --breedte: 17.5em;
+    --breedte: calc(var(--hoogte) * var(--BREEDTE-RATIO));
 
     // Breedte
     --diepte: calc(var(--hoogte) / var(--DIEPTE-RATIO));
@@ -190,9 +190,9 @@ main {
     width: var(--breedte);
 
     position: absolute;
-    top: 75%;
+    bottom: 1.25em;
     left: 50%;
-    transform: translate(-50%, -75%);
+    transform: translateX(-50%);
     perspective: var(--perspective-size);
 }
 

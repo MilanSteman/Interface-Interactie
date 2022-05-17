@@ -1175,11 +1175,11 @@ article > section:nth-of-type(1) > ol:nth-of-type(2) li {
   --DIEPTE-RATIO: 10;
   --DIEPTE-RATIO2: calc(var(--DIEPTE-RATIO) * 0.7);
   --DIEPTE-RATIO3: calc(var(--DIEPTE-RATIO) * 0.5);
-  --hoogte: calc(100vh / 4.5);
+  --hoogte: calc(100vh / 4);
   --hoogte2: calc(var(--hoogte) * 1.2);
   --hoogte3: calc(var(--hoogte) * 0.33);
   --hoogte4: calc(var(--hoogte) * 0.7);
-  --breedte: 17.5em;
+  --breedte: calc(var(--hoogte) * var(--BREEDTE-RATIO));
   --diepte: calc(var(--hoogte) / var(--DIEPTE-RATIO));
   --diepte2: calc(var(--hoogte) / var(--DIEPTE-RATIO2));
   --diepte3: calc(var(--hoogte) / var(--DIEPTE-RATIO3));
@@ -1288,10 +1288,10 @@ main {
   height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3));
   width: var(--breedte);
   position: absolute;
-  top: 75%;
+  bottom: 1.25em;
   left: 50%;
-  -webkit-transform: translate(-50%, -75%);
-          transform: translate(-50%, -75%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   -webkit-perspective: var(--perspective-size);
           perspective: var(--perspective-size);
 }
