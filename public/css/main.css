@@ -734,6 +734,8 @@ article > section:nth-of-type(4) {
   top: var(--hoogte2);
   -webkit-transform: translateZ(0.983em) translateX(calc(100% + 0.85em)) rotate3d(0, 1, 0, -180deg);
           transform: translateZ(0.983em) translateX(calc(100% + 0.85em)) rotate3d(0, 1, 0, -180deg);
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
 }
 
 article > section:nth-of-type(4).open {
@@ -878,6 +880,8 @@ article > section:nth-of-type(5) {
           flex-direction: column-reverse;
   -webkit-transform: translateZ(calc(var(--diepte3) - var(--diepte))) translateY(calc(-100% - var(--hoogte-connector2))) rotate3d(1, 0, 0, -180deg);
           transform: translateZ(calc(var(--diepte3) - var(--diepte))) translateY(calc(-100% - var(--hoogte-connector2))) rotate3d(1, 0, 0, -180deg);
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
 }
 
 article > section:nth-of-type(5).open {
@@ -1310,8 +1314,8 @@ article {
           transform-style: preserve-3d;
   -webkit-transform: rotate3d(1, 1, 1, 360deg);
           transform: rotate3d(1, 1, 1, 360deg);
-  -webkit-animation: rotate 2s linear infinite;
-          animation: rotate 2s linear infinite;
+  -webkit-animation: rotate 2s ease-in-out 1;
+          animation: rotate 2s ease-in-out 1;
 }
 
 article section {
@@ -1347,5 +1351,27 @@ article section:nth-of-type(4) {
 article section:nth-of-type(5) {
   height: var(--hoogte2);
   cursor: pointer;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate3d(0, 1, 0, 0deg);
+            transform: rotate3d(0, 1, 0, 0deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 1, 0, 1080deg);
+            transform: rotate3d(0, 1, 0, 1080deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate3d(0, 1, 0, 0deg);
+            transform: rotate3d(0, 1, 0, 0deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 1, 0, 1080deg);
+            transform: rotate3d(0, 1, 0, 1080deg);
+  }
 }
 /*# sourceMappingURL=main.css.map */

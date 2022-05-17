@@ -126,7 +126,7 @@ Korte omschrijving met plaatje(s)
 Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 
 1. [bron 1](https://stackoverflow.com/a/44213036)
-2. bron 2
+2. [bron 2](https://play.pokemonshowdown.com/audio/cries)
 3. ...
 
 </details>

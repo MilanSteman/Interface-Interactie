@@ -202,7 +202,7 @@ main {
 article {
     transform-style: preserve-3d;
     transform: rotate3d(1, 1, 1, 360deg);
-    animation: rotate 2s linear infinite;
+    animation: rotate 2s ease-in-out 1;
 
     section {
         transform-style: preserve-3d;
@@ -237,12 +237,12 @@ article {
     }
 }
 
-// @keyframes rotate {
-//     0% {
-//       transform: rotate3d(0, 0, 0, 0deg);
-//     }
+@keyframes rotate {
+    0% {
+        transform: rotate3d(0, 1, 0, 0deg);
+    }
 
-//     100% {
-//       transform: rotate3d(1, 1, 1, 360deg);
-//     }
-//   }
+    100% {
+        transform: rotate3d(0, 1, 0, 1080deg);
+    }
+}

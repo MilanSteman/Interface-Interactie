@@ -28,6 +28,7 @@ article {
             @include Slider(left, var(--hoogte2));
 
             transform: translateZ(0.983em) translateX(calc(100% + 0.85em)) rotate3d(0, 1, 0, -180deg);
+            transition: .5s ease-in-out;
 
             &.open {
                 transform: translateZ(1em) translateX(100%) rotate3d(0, 1, 0, 0deg);
@@ -53,6 +54,7 @@ article {
             flex-direction: column-reverse;
             transform: translateZ(calc(var(--diepte3) - var(--diepte)))
                 translateY(calc(-100% - var(--hoogte-connector2))) rotate3d(1, 0, 0, -180deg);
+            transition: .5s ease-in-out;
 
             &.open {
                 transform: translateZ(0) translateY(-100%) rotate3d(1, 0, 0, -15deg);

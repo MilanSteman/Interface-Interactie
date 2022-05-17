@@ -1,5 +1,4 @@
 const background = document.querySelector("body");
-const article = document.querySelector("article");
 const rightOpenRectangle = document.querySelector("article>section:nth-of-type(4)");
 const topOpenRectangle = document.querySelector("article>section:nth-of-type(5)");
 
@@ -21,8 +20,22 @@ const pokeListBottomChildren = document.querySelectorAll("article > section:nth-
 
 const longButton = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) > ol:nth-of-type(1) li:nth-of-type(1) button");
 const typeArray = ["normal", "water", "electric", "fire", "psychic", "dark", "grass", "ice", "fairy"];
+const voiceFileDir = "assets/audio";
+const voiceArray = ["eevee.mp3", "vaporeon.mp3", "jolteon.mp3", "flareon.mp3", "espeon.mp3", "umbreon.mp3", "leafeon.mp3", "glaceon.mp3", "sylveon.mp3"];
+const rightButton = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ul > li:nth-of-type(2) button");
 
 let pokeCounter = 0;
+
+const playAudio = () => {
+    const audio = new Audio(`${voiceFileDir}/${voiceArray[pokeCounter]}`)
+    audio.play();
+}
+
+rightButton.addEventListener("click", () => {
+    if (background.hasAttribute("class")) {
+        playAudio();
+    }
+})
 
 longButton.addEventListener("click", () => {
     screenTop.classList.toggle("online");
@@ -123,7 +136,10 @@ dPadDown.addEventListener("mouseout", () => dPad.classList.remove("down"));
 
 const openTopRectangle = () => {
     topOpenRectangle.classList.toggle("open");
-    article.classList.toggle("top")
+}
+
+const openRightRectangle = () => {
+    rightOpenRectangle.classList.toggle("open");
 }
 
 topOpenRectangle.addEventListener("click", () => {
@@ -131,7 +147,7 @@ topOpenRectangle.addEventListener("click", () => {
 });
 
 rightOpenRectangle.addEventListener("click", () => {
-    rightOpenRectangle.classList.toggle("open");
+    openRightRectangle();
 });
 
 for (let i = 0; i < pokeListTopChildren.length; i++) {
@@ -182,7 +198,7 @@ document.addEventListener("keyup", (event) => {
     if (key === "Enter") {
         switch (document.activeElement) {
             case rightOpenRectangle:
-                rightOpenRectangle.classList.toggle("open");
+                openRightRectangle();
                 break;
             case topOpenRectangle:
                 openTopRectangle();
@@ -196,3 +212,8 @@ document.addEventListener("keyup", (event) => {
         }
     }
 });
+
+setTimeout(() => {
+    openTopRectangle();
+    openRightRectangle();
+}, 2000);
