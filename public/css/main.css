@@ -180,6 +180,9 @@ article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > secti
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 0.625em;
   overflow: hidden;
 }
@@ -194,7 +197,6 @@ article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > secti
 }
 
 article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li section {
-  width: 50%;
   height: 100%;
 }
 
@@ -217,18 +219,23 @@ article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > secti
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  height: 100%;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  width: 50%;
-  height: 100%;
 }
 
-article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li figure img {
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li figure:first-of-type {
+  width: 2em;
+}
+
+article > section:nth-of-type(5) > ol:nth-of-type(2) > li:nth-of-type(1) > section.online ol > li figure:last-of-type img {
   height: 150%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 article > section:nth-of-type(3) ol li:nth-of-type(1) div {

@@ -1,10 +1,10 @@
 const rightOpenRectangle = document.querySelector("article>section:nth-of-type(4)");
 const topOpenRectangle = document.querySelector("article>section:nth-of-type(5)");
 
-const dPadLeft = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ol li:nth-of-type(1)");
-const dPadUp = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ol li:nth-of-type(2)");
-const dPadRight = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ol li:nth-of-type(3)");
-const dPadDown = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ol li:nth-of-type(4)");
+const dPadLeft = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ol li:nth-of-type(1) button");
+const dPadUp = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ol li:nth-of-type(2) button");
+const dPadRight = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ol li:nth-of-type(3) button");
+const dPadDown = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ol li:nth-of-type(4) button");
 
 const dPad = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ol");
 
@@ -148,4 +148,23 @@ document.addEventListener("keyup", (event) => {
             dPad.classList.remove("down")
             break;
     }
-})
+
+    if (key === "Enter") {
+        switch (document.activeElement) {
+            case rightOpenRectangle:
+                rightOpenRectangle.classList.toggle("open");
+                break;
+            case topOpenRectangle:
+                topOpenRectangle.classList.toggle("open");
+                break;
+            case dPadUp:
+                console.log("test")
+                goPrevious();
+                break;
+            case dPadDown:
+                console.log("test")
+                goNext();
+                break;
+        }
+    }
+});
