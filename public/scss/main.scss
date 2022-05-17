@@ -53,7 +53,7 @@
     --DIEPTE-RATIO3: calc(var(--DIEPTE-RATIO) * 0.5);
 
     // Hoogte
-    --hoogte: calc(100vh / 4);
+    --hoogte: 12.5em;
     --hoogte2: calc(var(--hoogte) * 1.2);
     --hoogte3: calc(var(--hoogte) * 0.33);
     --hoogte4: calc(var(--hoogte) * 0.7);
@@ -104,7 +104,7 @@ body {
     &::before {
         transition: 0.7s;
         content: "";
-        height: 80vh;
+        height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3) + var(--hoogte-connector2) + var(--hoogte2));
         aspect-ratio: 1/1;
         position: absolute;
         border-radius: 50%;
@@ -186,22 +186,22 @@ figure {
 }
 
 main {
-    height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3));
-    width: var(--breedte);
+    height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3) + var(--hoogte-connector2) + var(--hoogte2));
+    aspect-ratio: 1/1;
 
     position: absolute;
-    bottom: 1.25em;
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
     perspective: var(--perspective-size);
 }
 
 article {
     transform-style: preserve-3d;
-    width: 100%;
-    height: 100%;
     transform: rotate3d(1, 1, 1, 360deg);
-    background-color: #dc0a2d;
     animation: rotate 2s linear infinite;
 
     section {

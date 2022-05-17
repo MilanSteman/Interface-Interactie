@@ -1175,7 +1175,7 @@ article > section:nth-of-type(1) > ol:nth-of-type(2) li {
   --DIEPTE-RATIO: 10;
   --DIEPTE-RATIO2: calc(var(--DIEPTE-RATIO) * 0.7);
   --DIEPTE-RATIO3: calc(var(--DIEPTE-RATIO) * 0.5);
-  --hoogte: calc(100vh / 4);
+  --hoogte: 12.5em;
   --hoogte2: calc(var(--hoogte) * 1.2);
   --hoogte3: calc(var(--hoogte) * 0.33);
   --hoogte4: calc(var(--hoogte) * 0.7);
@@ -1219,7 +1219,7 @@ body::before {
   -webkit-transition: 0.7s;
   transition: 0.7s;
   content: "";
-  height: 80vh;
+  height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3) + var(--hoogte-connector2) + var(--hoogte2));
   aspect-ratio: 1/1;
   position: absolute;
   border-radius: 50%;
@@ -1285,13 +1285,22 @@ figure img {
 }
 
 main {
-  height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3));
-  width: var(--breedte);
+  height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3) + var(--hoogte-connector2) + var(--hoogte2));
+  aspect-ratio: 1/1;
   position: absolute;
-  bottom: 1.25em;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-perspective: var(--perspective-size);
           perspective: var(--perspective-size);
 }
@@ -1299,11 +1308,8 @@ main {
 article {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  width: 100%;
-  height: 100%;
   -webkit-transform: rotate3d(1, 1, 1, 360deg);
           transform: rotate3d(1, 1, 1, 360deg);
-  background-color: #dc0a2d;
   -webkit-animation: rotate 2s linear infinite;
           animation: rotate 2s linear infinite;
 }

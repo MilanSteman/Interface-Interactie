@@ -1,5 +1,5 @@
 const background = document.querySelector("body");
-const main = document.querySelector("main");
+const article = document.querySelector("article");
 const rightOpenRectangle = document.querySelector("article>section:nth-of-type(4)");
 const topOpenRectangle = document.querySelector("article>section:nth-of-type(5)");
 
@@ -123,6 +123,7 @@ dPadDown.addEventListener("mouseout", () => dPad.classList.remove("down"));
 
 const openTopRectangle = () => {
     topOpenRectangle.classList.toggle("open");
+    article.classList.toggle("top")
 }
 
 topOpenRectangle.addEventListener("click", () => {
