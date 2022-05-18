@@ -3,8 +3,10 @@
  */
 
 const background = document.querySelector("body");
-const rightOpenRectangle = document.querySelector("article>section:nth-of-type(4)");
-const topOpenRectangle = document.querySelector("article>section:nth-of-type(5)");
+const article = document.querySelector('main > article');
+
+const rightOpenRectangle = document.querySelector("article > section:nth-of-type(4)");
+const topOpenRectangle = document.querySelector("article > section:nth-of-type(5)");
 
 const dPadLeft = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ol li:nth-of-type(1) button");
 const dPadUp = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ol li:nth-of-type(2) button");
@@ -23,11 +25,12 @@ const pokeListBottom = document.querySelector("article > section:nth-of-type(1) 
 const pokeListBottomChildren = document.querySelectorAll("article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section ol > li");
 
 const longButton = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) > ol:nth-of-type(1) li:nth-of-type(1) button");
+const rightButton = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ul > li:nth-of-type(2) button");
+
 const typeArray = ["normal", "water", "electric", "fire", "psychic", "dark", "grass", "ice", "fairy"];
 const voiceFileDir = "assets/audio";
 const imagesDir = "assets/images";
 const eeveeArray = ["eevee", "vaporeon", "jolteon", "flareon", "espeon", "umbreon", "leafeon", "glaceon", "sylveon"];
-const rightButton = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ul > li:nth-of-type(2) button");
 
 const favicon = document.querySelector("link[rel~='icon']");
 
@@ -107,7 +110,6 @@ const goPrevious = () => {
     };
 };
 
-const article = document.querySelector('main > article');
 /**
  * Eventlisteners
  */
@@ -212,6 +214,8 @@ rightOpenRectangle.addEventListener("click", () => openRectangle(rightOpenRectan
 
 /**
  * D-pad functions
+ * Gebaseerd op:
+ * https://sinds1971.nl/spelenmetcss/2022-feb/stephan/index.html
  */
 
 dPadLeft.addEventListener("mousedown", () => dPad.classList.add("left"));

@@ -123,11 +123,21 @@ Korte omschrijving met plaatje(s)
 <details open>
 <summary>continu bijhouden terwijl je werkt</summary>
 
-Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
-
-1. [bron 1](https://stackoverflow.com/a/44213036)
-2. [bron 2](https://play.pokemonshowdown.com/audio/cries)
-3. https://bootstrapcreative.com/how-to-change-favicon-with-javascript/
-4. https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
-
+1. [Cube - Intro to CSS 3D transforms](https://3dtransforms.desandro.com/cube)
+2. [Detecting arrow key presses in JavaScript](https://stackoverflow.com/a/44213036)
+3. [D-Pad animatie & box shadow](https://sinds1971.nl/spelenmetcss/2022-feb/stephan/index.html)
+4. [Changing Favicon in Javascript](https://bootstrapcreative.com/how-to-change-favicon-with-javascript/)
+5. [Make first letter of string uppercase in Javascript](https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript)
+6. [How to use the mouseover event](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event)
+7. [How to get the viewport in Javascript](https://stackoverflow.com/questions/1766861/find-the-exact-height-and-width-of-the-viewport-in-a-cross-browser-way-no-proto)
+8. [Javascript MousEvent pageY](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageY)
+9. [Javascript MousEvent pageX](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageX)
+10. [CSS Translate3d](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d)
+11. [Smoother & sharper shadows with layered box-shadows](https://tobiasahlin.com/blog/layered-smooth-box-shadows/)
+12. [Scss @mixin and @include](https://sass-lang.com/documentation/at-rules/mixin)
+13. [CSS Radial Gradients](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/radial-gradient)
+14. [Pokemon Audio (Alle)](https://play.pokemonshowdown.com/audio/cries)
+15. [Pokemon Informatie (Alle)](https://bulbapedia.bulbagarden.net/wiki/Eeveelution)
+16. [Pokemon Sprites (Alle)](https://www.ign.com/wikis/pokemon-black-and-white/)
+17. [Pokemon Item Sprites (Alle)](https://bulbapedia.bulbagarden.net/)
 </details>
