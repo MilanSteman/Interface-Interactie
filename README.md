@@ -15,10 +15,9 @@
 
 Aan deze technieken/punten wil ik werken:
 
-- punt 1
-- punt 2
-- nog een punt
-- ...
+- Werken met 3d objecten in CSS;
+- Transities en animaties;
+- Interacties d.m.v. DOM manipulatie
 
 </details>
 
@@ -81,23 +80,43 @@ Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het 
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
   
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  Je hebt nu een 3d model, maar buiten de start-animatie doe je er niet veel mee. Is het misschien een idee om nog iets interactiefs met je 3d model te doen?
 
 #### oplossing:
 
-Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+Om ervoor te zorgen dat er toch een stukje interactiviteit was met het 3d object, heb ik een functie aangemaakt die het 3d model laat transformen wanneer je buiten de 'box' van de pokedex aan het hoveren bent. Hier kijk ik ook naar de 'hoek' waarin de cursor zich bevind. Zo kunnen we de translate3d aanpassen o.b.v. muispositie.
 
 ### Bevinding 2:
 
-Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+De interactie in de pokedex voelt nog wat leeg aan. Is er een manier waarop je het wat speelser kan maken?
 
 #### oplossing:
 
-Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+Om de interactie te verhogen, heb ik de actieve Eevee in de bovenste lijst een animatie gegeven, Nu springt de huidige Eevee op en neer, net als in de echte game. Verder verandert de favicon en de titel naar de huidige Eevee. Bovendien laat ik per Eevee in de bovenste lijst zien welk item ze nodig hebben om te evolueren.
 
 ### Bevinding 3:
 
-...
+De blurry achtergrond is nog moeilijk te spotten. Kan je deze op een manier versterken?
+
+#### oplossing:
+
+Om de achtergrond te versterken, heb ik een 'outer'- en 'inner' cirkel gemaakt. De inner ring heeft meer opacity, maar is kleiner. Hierdoor krijg je een mooier achtergrond-effect.
+
+### Bevinding 4:
+
+De achtergrond en Eevee's veranderen nog steeds wanneer de pokedex uit staat. Je kan ook op het geluid-knopje drukken (wanneer de pokedex uit staat).
+
+#### oplossing:
+
+Dit was natuurlijk niet de bedoeling. Ik wil eigenlijk dat je alleen de interacteren met de elementen wanneer de pokedex aan staat. Hiervoor heb ik in het Javascript bestand een if statement gezet voor elke interactief blokje. Deze statement bevat een conditie die bekijkt of de pokedex de classList 'online' bevat. Wanneer dit niet het geval is, dan zullen de interactieve elementen nog niet werken.
+
+### Bevinding 5:
+
+De tekst in je pokedex snijdt nu nog af. Is dit de bedoeling? Of zou je er bijvoorbeeld doorheen kunnen scrollen?
+
+#### oplossing:
+
+De tekst hoort eigenlijk scrollable te zijn. Om dit te realiseren, heb ik bij de parent (li) een overflow: scroll neergezet.
 
 </details>
 
@@ -121,7 +140,7 @@ Korte omschrijving met plaatje(s)
 ## Bronnenlijst
 
 <details open>
-<summary>continu bijhouden terwijl je werkt</summary>
+<summary>Alle bronnen</summary>
 
 1. [Cube - Intro to CSS 3D transforms](https://3dtransforms.desandro.com/cube)
 2. [Detecting arrow key presses in JavaScript](https://stackoverflow.com/a/44213036)
