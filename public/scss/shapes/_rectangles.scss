@@ -1,5 +1,7 @@
 @import "../util/mixins";
 
+// Inspiratie: https://3dtransforms.desandro.com/cube
+
 article {
     & > section {
         &:nth-of-type(1) {
