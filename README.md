@@ -6,15 +6,12 @@
 
 # Je plan
 
-<details open>
+<details>
   <summary>De eerste versie/schets van je ontwerp & je persoonlijke uitdaging</summary>
 
 ### De eerste versie/schets:
 
-<p align="center">
-  <img src="assets/readme-images/20220510_094703.jpg" width="400px" alt="eerste versie/schets">
-  <br>
-</p>
+<img src="assets/readme-images/20220510_094703.jpg" width="400px" alt="eerste versie/schets">
 
 ### Je ambitie:
 
@@ -169,9 +166,9 @@ De tekst hoort eigenlijk scrollable te zijn. Om dit te realiseren, heb ik bij de
   <summary>Mijn eindresultaat & persoonlijke ontwikkeling</summary>
 
 ### Je uitkomst - karakteristiek screenshot(s):
-<img src="assets/readme-images/eindresultaat-1.png" width="33%" alt="eerste versie/schets">
-<img src="assets/readme-images/eindresultaat-2.png" width="33%" alt="eerste versie/schets">
-<img src="assets/readme-images/eindresultaat-3.png" width="33%" alt="eerste versie/schets">
+<img src="assets/readme-images/eindresultaat-1.png" width="49%" alt="eerste versie/schets">
+<img src="assets/readme-images/eindresultaat-2.png" width="49%" alt="eerste versie/schets">
+<img src="assets/readme-images/eindresultaat-3.png" width="49%" alt="eerste versie/schets">
 
 ### Dit ging goed/Heb ik geleerd:
 
