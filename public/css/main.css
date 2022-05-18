@@ -73,57 +73,69 @@ body {
   max-height: 100vh;
 }
 
-body::before {
+body::before, body::after {
   -webkit-transition: 0.7s;
   transition: 0.7s;
   content: "";
-  height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3) + var(--hoogte-connector2) + var(--hoogte2));
-  aspect-ratio: 1/1;
   position: absolute;
   border-radius: 50%;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  z-index: -1;
+  aspect-ratio: 1/1;
   -webkit-filter: blur(6em);
           filter: blur(6em);
+}
+
+body::before {
+  height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3) + var(--hoogte-connector2) + var(--hoogte2));
+  z-index: -2;
   opacity: 0.8;
 }
 
-body.normal::before {
+body::after {
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  content: "";
+  height: 100%;
+  opacity: 0.1;
+  z-index: -2;
+}
+
+body.normal::before, body.normal::after {
   background-color: var(--normal);
 }
 
-body.water::before {
+body.water::before, body.water::after {
   background-color: var(--water);
 }
 
-body.electric::before {
+body.electric::before, body.electric::after {
   background-color: var(--electric);
 }
 
-body.fire::before {
+body.fire::before, body.fire::after {
   background-color: var(--fire);
 }
 
-body.psychic::before {
+body.psychic::before, body.psychic::after {
   background-color: var(--psychic);
 }
 
-body.dark::before {
+body.dark::before, body.dark::after {
   background-color: var(--dark);
 }
 
-body.grass::before {
+body.grass::before, body.grass::after {
   background-color: var(--grass);
 }
 
-body.ice::before {
+body.ice::before, body.ice::after {
   background-color: var(--ice);
 }
 
-body.fairy::before {
+body.fairy::before, body.fairy::after {
   background-color: var(--fairy);
 }
 
@@ -170,6 +182,11 @@ article {
           transform: rotate3d(1, 1, 1, 360deg);
   -webkit-animation: rotate 2s ease-in-out 1;
           animation: rotate 2s ease-in-out 1;
+}
+
+article.transition {
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 article section {
@@ -306,7 +323,7 @@ article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > secti
 
 article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li:nth-of-type(6) section ul li {
   background-color: var(--dark);
-  background-color: var(--pokedex-inner);
+  color: var(--pokedex-inner);
 }
 
 article > section:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > section.online ol > li:nth-of-type(7) section ul li {

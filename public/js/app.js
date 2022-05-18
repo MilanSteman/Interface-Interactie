@@ -107,6 +107,7 @@ const goPrevious = () => {
     };
 };
 
+const article = document.querySelector('main > article');
 /**
  * Eventlisteners
  */
@@ -119,6 +120,50 @@ document.addEventListener("DOMContentLoaded", () => {
         openRectangle(topOpenRectangle);
         openRectangle(rightOpenRectangle);
     }, 2000);
+});
+
+document.addEventListener("mousemove", (event) => {
+    const range = 40;
+    const degrees = 360;
+    const boxSize = 700;
+
+    const leftMargin = (window.innerWidth - boxSize) / 2;
+    const rightMargin = leftMargin + boxSize;
+
+    if (event.pageX > rightMargin) {
+        if (event.pageY > (window.innerHeight / 2)) {
+            // bottom right
+            const mouseMovement = event.pageY - (window.innerHeight / 2);
+            const pokedexMovement = (mouseMovement / range);
+            console.log(pokedexMovement)
+            article.style.transform = `rotate3d(0, 1, 1, ${pokedexMovement}deg)`;
+        } else {
+            // top right
+            const mouseMovement = (window.innerHeight / 2) - event.pageY;
+            const pokedexMovement = mouseMovement / range;
+            article.style.transform = `rotate3d(1, 1, 0, ${pokedexMovement}deg)`;
+        }
+    } else if (event.pageX < leftMargin) {
+        if (event.pageY > (window.innerHeight / 2)) {
+            // bottom left
+            const mouseMovement = event.pageY - (window.innerHeight / 2);
+            const pokedexMovement = degrees - (mouseMovement / range);
+            console.log(mouseMovement)
+
+            article.style.transform = `rotate3d(1, 1, 1, ${pokedexMovement}deg)`;
+        } else {
+            // top left
+            const mouseMovement = event.pageY - (window.innerHeight / 2);
+            const pokedexMovement = mouseMovement / range;
+            article.style.transform = `rotate3d(-1, 1, 0, ${pokedexMovement}deg)`;
+        }
+    } else {
+        article.classList.add("transition");
+        article.style.transform = `rotate3d(1, 1, 1, ${degrees}deg)`;
+        setTimeout(() => {
+            article.classList.remove("transition");
+        }, 500);
+    }
 });
 
 document.addEventListener("keydown", (event) => {

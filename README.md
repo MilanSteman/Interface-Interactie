@@ -1,8 +1,8 @@
 # Interface-Interactie
 
-#### Je startniveau:
-
-Mijn startniveau is: hier je startniveau (kies uit zwart, rood óf blauw)
+| Naam | Studentnr.       | Klas     | Vak     | Startniveau |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| Milan Steman     | 500800819       | VID2 | Interface & Interactie | Zwart |
 
 # Je plan
 

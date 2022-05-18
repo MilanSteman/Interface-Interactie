@@ -98,71 +98,82 @@ body {
     max-width: 100vw;
     max-height: 100vh;
 
-    &::before {
+    &::before, &::after {
         transition: 0.7s;
         content: "";
-        height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3) + var(--hoogte-connector2) + var(--hoogte2));
-        aspect-ratio: 1/1;
         position: absolute;
         border-radius: 50%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: -1;
+        aspect-ratio: 1/1;
         filter: blur(6em);
+    }
+
+    &::before {
+        height: calc(var(--hoogte4) + var(--hoogte2) + var(--hoogte3) + var(--hoogte-connector2) + var(--hoogte2));
+        z-index: -2;
         opacity: 0.8;
     }
 
+    &::after {
+        transition: 0.7s;
+        content: "";
+        height: 100%;
+        opacity: 0.1;
+        z-index: -2;
+    }
+
     &.normal {
-        &::before {
+        &::before, &::after {
             background-color: var(--normal);
         }
     }
 
     &.water {
-        &::before {
+        &::before, &::after {
             background-color: var(--water);
         }
     }
 
     &.electric {
-        &::before {
+        &::before, &::after {
             background-color: var(--electric);
         }
     }
 
     &.fire {
-        &::before {
+        &::before, &::after {
             background-color: var(--fire);
         }
     }
 
     &.psychic {
-        &::before {
+        &::before, &::after {
             background-color: var(--psychic);
         }
     }
 
     &.dark {
-        &::before {
+        &::before, &::after {
             background-color: var(--dark);
         }
     }
 
     &.grass {
-        &::before {
+        &::before, &::after {
             background-color: var(--grass);
         }
     }
 
     &.ice {
-        &::before {
+        &::before, &::after {
             background-color: var(--ice);
         }
     }
 
     &.fairy {
-        &::before {
+        &::before, &::after {
             background-color: var(--fairy);
         }
     }
@@ -200,6 +211,10 @@ article {
     transform-style: preserve-3d;
     transform: rotate3d(1, 1, 1, 360deg);
     animation: rotate 2s ease-in-out 1;
+
+    &.transition {
+        transition: .5s;
+    }
 
     section {
         transform-style: preserve-3d;
