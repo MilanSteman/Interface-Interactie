@@ -25,8 +25,11 @@ const pokeListBottomChildren = document.querySelectorAll("article > section:nth-
 const longButton = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) > ol:nth-of-type(1) li:nth-of-type(1) button");
 const typeArray = ["normal", "water", "electric", "fire", "psychic", "dark", "grass", "ice", "fairy"];
 const voiceFileDir = "assets/audio";
-const voiceArray = ["eevee.mp3", "vaporeon.mp3", "jolteon.mp3", "flareon.mp3", "espeon.mp3", "umbreon.mp3", "leafeon.mp3", "glaceon.mp3", "sylveon.mp3"];
+const imagesDir = "assets/images";
+const eeveeArray = ["eevee", "vaporeon", "jolteon", "flareon", "espeon", "umbreon", "leafeon", "glaceon", "sylveon"];
 const rightButton = document.querySelector("article > section:nth-of-type(2) > ol > li:nth-of-type(1) section:nth-of-type(1) ul > li:nth-of-type(2) button");
+
+const favicon = document.querySelector("link[rel~='icon']");
 
 let pokeCounter = 0;
 
@@ -34,8 +37,19 @@ let pokeCounter = 0;
  * Functions
  */
 
+const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+
+const setMetadata = () => {
+    favicon.type = "image/x-icon";
+    favicon.rel = "shortcut icon";
+    favicon.href = `${imagesDir}/${eeveeArray[pokeCounter]}.gif`;
+    document.getElementsByTagName('head')[0].appendChild(favicon);
+
+    document.title = `Eeveelution: ${capitalizeFirstLetter(eeveeArray[pokeCounter])}`
+}
+
 const playAudio = () => {
-    const audio = new Audio(`${voiceFileDir}/${voiceArray[pokeCounter]}`)
+    const audio = new Audio(`${voiceFileDir}/${eeveeArray[pokeCounter]}.mp3`)
     audio.play();
 }
 
@@ -73,6 +87,7 @@ const goNext = () => {
         }
 
         setNextPokemon();
+        setMetadata();
     };
 };
 
@@ -88,6 +103,7 @@ const goPrevious = () => {
         }
 
         setNextPokemon();
+        setMetadata();
     };
 };
 
@@ -155,25 +171,21 @@ rightOpenRectangle.addEventListener("click", () => openRectangle(rightOpenRectan
 
 dPadLeft.addEventListener("mousedown", () => dPad.classList.add("left"));
 dPadLeft.addEventListener("mouseup", () => dPad.classList.remove("left"));
-dPadLeft.addEventListener("mouseout", () => dPad.classList.remove("left"));
 
 dPadUp.addEventListener("mousedown", () => {
     goPrevious();
 });
 
 dPadUp.addEventListener("mouseup", () => dPad.classList.remove("up"));
-dPadUp.addEventListener("mouseout", () => dPad.classList.remove("up"));
 
 dPadRight.addEventListener("mousedown", () => dPad.classList.add("right"));
 dPadRight.addEventListener("mouseup", () => dPad.classList.remove("right"));
-dPadRight.addEventListener("mouseout", () => dPad.classList.remove("right"));
 
 dPadDown.addEventListener("mousedown", () => {
     goNext();
 });
 
 dPadDown.addEventListener("mouseup", () => dPad.classList.remove("down"));
-dPadDown.addEventListener("mouseout", () => dPad.classList.remove("down"));
 
 document.addEventListener("keyup", (event) => {
     const key = event.key;

@@ -127,6 +127,7 @@ Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 
 1. [bron 1](https://stackoverflow.com/a/44213036)
 2. [bron 2](https://play.pokemonshowdown.com/audio/cries)
-3. ...
+3. https://bootstrapcreative.com/how-to-change-favicon-with-javascript/
+4. https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
 
 </details>
