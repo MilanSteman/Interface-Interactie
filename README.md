@@ -24,34 +24,38 @@ Aan deze technieken/punten wil ik werken:
 ## Voortgang/Feedback 1
 
 <details>
-  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
+  <summary>Mijn bevindingen + wijzigingen</summary>
 
 ### Bevinding 1:
 
-Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+Hoe wil je precies de evolutie gaan tonen voor alle Eevee's?
 
 #### oplossing:
 
-Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+Dit was een goed punt. Een pokedex is leuk, maar hoe ga je precies de evoluties tonen? Ik ben tot de oplossing gekomen om de benodigde items op het bovenste scherm te tonen. Dit kan bijvoorbeeld door alle Eevee's op een rij te zetten, met het item.
 
 ### Bevinding 2:
 
-Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+Welke transities wil je in je ontwerp stoppen? Kan er bijvoorbeeld een swipe-effect o.i.d. komen?
 
 #### oplossing:
 
-Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+Het liefst wil ik een scroll effect creëren wanneer je van Eevee verandert.
 
 ### Bevinding 3:
 
-...
+Zijn er nog easter eggs die je wilt toevoegen?
+
+#### oplossing:
+
+Misschien zou het leuk zijn om als easter egg een pokeball-icon per Eevee te zetten wanneer je erover hovered, of dat er iets qua tekst op de achtergrond verandert.
 
 </details>
 
 ## Voortgang/Feedback 2
 
 <details>
-  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
+  <summary>Mijn bevindingen + wijzigingen</summary>
   
   ### Bevinding 1:
   Je hebt nog geen fonts gebruikt op je pagina. Kijk of je misschien een lokaal font, of eentje van Google/Adobe kan inladen.
@@ -111,7 +115,7 @@ Er waren nog een aantal divjes die wrappen om een losse section of ander element
 ## Voortgang/Feedback 3
 
 <details>
-  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
+  <summary>Mijn bevindingen + wijzigingen</summary>
   
   ### Bevinding 1:
   Je hebt nu een 3d model, maar buiten de start-animatie doe je er niet veel mee. Is het misschien een idee om nog iets interactiefs met je 3d model te doen?
@@ -173,7 +177,7 @@ Korte omschrijving met plaatje(s)
 
 ## Bronnenlijst
 
-<details>
+<details open>
 <summary>Alle bronnen</summary>
 
 1. [Cube - Intro to CSS 3D transforms](https://3dtransforms.desandro.com/cube)
