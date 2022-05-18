@@ -172,11 +172,57 @@ De tekst hoort eigenlijk scrollable te zijn. Om dit te realiseren, heb ik bij de
 
 ### Dit ging goed/Heb ik geleerd:
 
-Korte omschrijving met plaatje(s)
+Uiteindelijk ben ik blij met het resultaat van het 3d object. Ik heb eerst in codepen gewerkt deze is hier te zien: https://codepen.io/MilanSteman/pen/WNMwPGe. Het was even lastig om door te hebben hoe het precies werkte, maar uiteindelijk heb ik met behulp van een artikel het gemaakt. De achtergrond blur vind ik trouwens ook heel mooi uitgewerkt. Met css filter() kan je een hoop mooie elementen creëren. Bovendien heb ik maar 1 divje gebruikt - en geen classes in de HTML zelf (wel met Javascript toegevoegd). Verder ben ik helemaal zelf op het stukje Javascript gekomen om de pokedex te laten draaien. Ik moest hiervoor alleen opzoeken hoe we precies de viewport en mouse movement konden krijgen.
+
+```javascript
+document.addEventListener("mousemove", (event) => {
+    const range = 40;
+    const degrees = 360;
+    const boxSize = 700;
+
+    const leftMargin = (window.innerWidth - boxSize) / 2;
+    const rightMargin = leftMargin + boxSize;
+
+    if (event.pageX > rightMargin) {
+        if (event.pageY > (window.innerHeight / 2)) {
+            // bottom right
+            const mouseMovement = event.pageY - (window.innerHeight / 2);
+            const pokedexMovement = (mouseMovement / range);
+            console.log(pokedexMovement)
+            article.style.transform = `rotate3d(0, 1, 1, ${pokedexMovement}deg)`;
+        } else {
+            // top right
+            const mouseMovement = (window.innerHeight / 2) - event.pageY;
+            const pokedexMovement = mouseMovement / range;
+            article.style.transform = `rotate3d(1, 1, 0, ${pokedexMovement}deg)`;
+        }
+    } else if (event.pageX < leftMargin) {
+        if (event.pageY > (window.innerHeight / 2)) {
+            // bottom left
+            const mouseMovement = event.pageY - (window.innerHeight / 2);
+            const pokedexMovement = degrees - (mouseMovement / range);
+            console.log(mouseMovement)
+
+            article.style.transform = `rotate3d(1, 1, 1, ${pokedexMovement}deg)`;
+        } else {
+            // top left
+            const mouseMovement = event.pageY - (window.innerHeight / 2);
+            const pokedexMovement = mouseMovement / range;
+            article.style.transform = `rotate3d(-1, 1, 0, ${pokedexMovement}deg)`;
+        }
+    } else {
+        article.classList.add("transition");
+        article.style.transform = `rotate3d(1, 1, 1, ${degrees}deg)`;
+        setTimeout(() => {
+            article.classList.remove("transition");
+        }, 500);
+    }
+});
+```
 
 ### Dit was lastig/Is niet gelukt:
 
-Korte omschrijving met plaatje(s)
+Ik had liever nog wat extra tijd willen besteden aan de shadows/uiterlijk van de pokedex. Het kon allemaal nog net even ietsje realistischer naar mijn mening. Verder is het rechter-uitklapbare blokje nog vrij basic. Hier had nog iets van een shadow op kunnen komen. Bovendien had ik nog wat interactie kunnen toevoegen aan het ontwerp. Tot slot had ik misschien iets van een inzoom functie willen hebben voor het schermpje, omdat de tekst en andere content vrij klein is.
 
 </details>
 
