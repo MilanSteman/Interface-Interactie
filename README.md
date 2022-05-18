@@ -1,8 +1,8 @@
 # Interface-Interactie
 
-| Naam | Studentnr.       | Klas     | Vak     | Startniveau |
-| ----------- | ----------- | ----------- | ----------- | ----------- |
-| Milan Steman     | 500800819       | VID2 | Interface & Interactie | Zwart |
+| Naam         | Studentnr. | Klas | Vak                    | Startniveau |
+| ------------ | ---------- | ---- | ---------------------- | ----------- |
+| Milan Steman | 500800819  | VID2 | Interface & Interactie | Zwart       |
 
 # Je plan
 
@@ -54,23 +54,57 @@ Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het 
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
   
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  Je hebt nog geen fonts gebruikt op je pagina. Kijk of je misschien een lokaal font, of eentje van Google/Adobe kan inladen.
 
 #### oplossing:
 
-Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+Eigenlijk had ik op dit moment nog niet heel veel behoefte aan een font. Ik had nog maar drie regels met tekst. De bedoeling is dat er per Eeveelution en korte tekst met wat uitleg komt te staan. Dit staat in het reguliere sans-serif niet heel mooi. Daarom heb ik het font [inter](https://fonts.google.com/specimen/Inter) geïmporteerd vanuit Google Fonts.
 
 ### Bevinding 2:
 
-Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+Je openklapbare rechthoekjes kunnen nog niet met tab geselecteerd worden. Bovendien missen de buttons nog een aantal states.
 
 #### oplossing:
 
-Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+De openklapbare rechthoeken zijn geen buttons. Daarom kunnen ze niet automatisch met tab geselecteerd worden. Hiervoor heb ik het HTML attribuut `tabindex` gebruikt.
+
+```html
+<!-- Rechthoek 5 -->
+<section tabindex="1">
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</section>
+```
+
+Aan de buttons heb ik een active state toegevoegd. Hierdoor krijg je een daadwerkelijke inklikbare button.
+
 
 ### Bevinding 3:
+Ik zie dat je een extensie gebruikt op je CSS. Hierdoor compiled het alleen verkeerd om. Je custom properties en globale stijling komen onderaan te staan.
 
-...
+#### oplossing:
+
+Ik had in mijn main.scss perongeluk eerst de verschillende mapjes geïmporteerd voor de globale stijling. Hierdoor stond het allemaal andersom. Dit heb ik omgedraait. In de main.scss staan nu pas op het eind de imports.
+
+### Bevinding 4:
+In je CSS custom properties wordt niet altijd dezelfde manier gebruikt om kleurtjes te verzamelen.
+
+#### oplossing:
+
+In de custom properties stonden wat kleurtjes die met hsl gespecificeerd werden. Dit was niet de bedoeling, aangezien ik niet met verschillende tinten ging werken. De onnodige kleurtjes zijn weggehaald of aangepast naar een hexcode.
+
+### Bevinding 5:
+Er zijn nog een paar divjes die onnodig wrappen om bepaalde elementen.
+
+#### oplossing:
+
+Er waren nog een aantal divjes die wrappen om een losse section of ander element. Deze zijn in de HTML weggehaald en in de CSS is de stijling zodanig aangepast dat hetzelfde resultaat (qua stijling) te behalen was zonder de extra div.
 
 </details>
 
@@ -116,7 +150,7 @@ De tekst in je pokedex snijdt nu nog af. Is dit de bedoeling? Of zou je er bijvo
 
 #### oplossing:
 
-De tekst hoort eigenlijk scrollable te zijn. Om dit te realiseren, heb ik bij de parent (li) een overflow: scroll neergezet.
+De tekst hoort eigenlijk scrollable te zijn. Om dit te realiseren, heb ik bij de parent (li) een overflow met als waarde scroll neergezet. De parent (ol) heeft nog steeds de waarde hidden. Zo snijdt de tekst af in het beeldscherm, maar kan je wel door de tekst heen scrollen.
 
 </details>
 
@@ -139,7 +173,7 @@ Korte omschrijving met plaatje(s)
 
 ## Bronnenlijst
 
-<details open>
+<details>
 <summary>Alle bronnen</summary>
 
 1. [Cube - Intro to CSS 3D transforms](https://3dtransforms.desandro.com/cube)
