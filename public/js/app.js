@@ -1,3 +1,7 @@
+/**
+ * Variables
+ */
+
 const background = document.querySelector("body");
 const rightOpenRectangle = document.querySelector("article>section:nth-of-type(4)");
 const topOpenRectangle = document.querySelector("article>section:nth-of-type(5)");
@@ -26,34 +30,40 @@ const rightButton = document.querySelector("article > section:nth-of-type(2) > o
 
 let pokeCounter = 0;
 
+/**
+ * Functions
+ */
+
 const playAudio = () => {
     const audio = new Audio(`${voiceFileDir}/${voiceArray[pokeCounter]}`)
     audio.play();
 }
 
-rightButton.addEventListener("click", () => {
-    if (background.hasAttribute("class")) {
-        playAudio();
-    }
-})
+const openRectangle = (rectangle) => rectangle.classList.toggle("open");
 
-longButton.addEventListener("click", () => {
-    screenTop.classList.toggle("online");
-    screenBottom.classList.toggle("online");
+const setNextPokemon = () => {
+    setCurrent();
 
-    if (background.hasAttribute("class")) {
-        background.removeAttribute("class");
-    } else {
-        background.classList.add(typeArray[pokeCounter]);
-    }
-});
+    background.removeAttribute("class");
+    background.classList.add(typeArray[pokeCounter]);
 
-dPadLeft.addEventListener("mousedown", () => dPad.classList.add("left"));
-dPadLeft.addEventListener("mouseup", () => dPad.classList.remove("left"));
-dPadLeft.addEventListener("mouseout", () => dPad.classList.remove("left"));
+    pokeListTop.scroll({ top: pokeListTopChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth' });
+    pokeListBottom.scroll({ top: pokeListBottomChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth' });
+}
+
+const setCurrent = () => {
+    for (let i = 0; i < pokeListTopChildren.length; i++) {
+        if (i === pokeCounter) {
+            pokeListTopChildren[i].classList.add("current");
+        } else {
+            pokeListTopChildren[i].classList.remove("current");
+        }
+    };
+};
 
 const goNext = () => {
     dPad.classList.add("down");
+
     if (background.hasAttribute("class")) {
 
         if (pokeCounter === pokeListBottomChildren.length - 1) {
@@ -62,101 +72,38 @@ const goNext = () => {
             pokeCounter++;
         }
 
-        for (let i = 0; i < pokeListTopChildren.length; i++) {
-            if (i === pokeCounter) {
-                pokeListTopChildren[i].classList.add("current");
-            } else {
-                pokeListTopChildren[i].classList.remove("current");
-            }
-        }
-
-        background.removeAttribute("class");
-        background.classList.add(typeArray[pokeCounter]);
-
-        pokeListTop.scroll({ top: pokeListTopChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth' });
-        pokeListBottom.scroll({ top: pokeListBottomChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth' });
-    }
-}
+        setNextPokemon();
+    };
+};
 
 const goPrevious = () => {
     dPad.classList.add("up");
+
     if (background.hasAttribute("class")) {
 
         if (pokeCounter === 0) {
             pokeCounter = pokeListBottomChildren.length - 1;
-
-            for (let i = 0; i < pokeListTopChildren.length; i++) {
-                if (i === pokeCounter) {
-                    pokeListTopChildren[i].classList.add("current");
-                } else {
-                    pokeListTopChildren[i].classList.remove("current");
-                }
-            }
-
-            background.removeAttribute("class");
-            background.classList.add(typeArray[pokeCounter]);
-
-            pokeListTop.scroll({ top: pokeListTopChildren[pokeCounter].offsetTop, left: 0, behavior: 'smooth' });
-            pokeListBottom.scroll({ top: pokeListBottomChildren[pokeCounter].offsetTop, left: 0, behavior: 'smooth' });
         } else {
             pokeCounter--;
-
-            for (let i = 0; i < pokeListTopChildren.length; i++) {
-                if (i === pokeCounter) {
-                    pokeListTopChildren[i].classList.add("current");
-                } else {
-                    pokeListTopChildren[i].classList.remove("current");
-                }
-            }
-
-            background.removeAttribute("class");
-            background.classList.add(typeArray[pokeCounter]);
-
-            pokeListTop.scroll({ top: pokeListTopChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth' });
-            pokeListBottom.scroll({ top: pokeListBottomChildren[pokeCounter].offsetTop - 10, left: 0, behavior: 'smooth' });
         }
-    }
-}
 
-dPadUp.addEventListener("mousedown", () => {
-    goPrevious();
+        setNextPokemon();
+    };
+};
+
+/**
+ * Eventlisteners
+ */
+
+document.addEventListener("DOMContentLoaded", () => {
+    setCurrent();
+
+    // Delay for opening the pokedex
+    setTimeout(() => {
+        openRectangle(topOpenRectangle);
+        openRectangle(rightOpenRectangle);
+    }, 2000);
 });
-dPadUp.addEventListener("mouseup", () => dPad.classList.remove("up"));
-dPadUp.addEventListener("mouseout", () => dPad.classList.remove("up"));
-
-dPadRight.addEventListener("mousedown", () => dPad.classList.add("right"));
-dPadRight.addEventListener("mouseup", () => dPad.classList.remove("right"));
-dPadRight.addEventListener("mouseout", () => dPad.classList.remove("right"));
-
-dPadDown.addEventListener("mousedown", () => {
-    goNext();
-});
-dPadDown.addEventListener("mouseup", () => dPad.classList.remove("down"));
-dPadDown.addEventListener("mouseout", () => dPad.classList.remove("down"));
-
-const openTopRectangle = () => {
-    topOpenRectangle.classList.toggle("open");
-}
-
-const openRightRectangle = () => {
-    rightOpenRectangle.classList.toggle("open");
-}
-
-topOpenRectangle.addEventListener("click", () => {
-    openTopRectangle();
-});
-
-rightOpenRectangle.addEventListener("click", () => {
-    openRightRectangle();
-});
-
-for (let i = 0; i < pokeListTopChildren.length; i++) {
-    if (i === pokeCounter) {
-        pokeListTopChildren[i].classList.add("current");
-    } else {
-        pokeListTopChildren[i].classList.remove("current");
-    }
-}
 
 document.addEventListener("keydown", (event) => {
     const key = event.key;
@@ -174,8 +121,59 @@ document.addEventListener("keydown", (event) => {
         case "ArrowDown":
             goNext();
             break;
-    }
-})
+    };
+
+    if (key === "Enter") {
+        switch (document.activeElement) {
+            case rightOpenRectangle:
+                openRectangle(rightOpenRectangle);
+                break;
+            case topOpenRectangle:
+                openRectangle(topOpenRectangle);
+                break;
+            case dPadUp:
+                goPrevious();
+                break;
+            case dPadDown:
+                goNext();
+                break;
+        };
+    };
+});
+
+/**
+ * Open rectangles
+ */
+
+topOpenRectangle.addEventListener("click", () => openRectangle(topOpenRectangle));
+
+rightOpenRectangle.addEventListener("click", () => openRectangle(rightOpenRectangle));
+
+/**
+ * D-pad functions
+ */
+
+dPadLeft.addEventListener("mousedown", () => dPad.classList.add("left"));
+dPadLeft.addEventListener("mouseup", () => dPad.classList.remove("left"));
+dPadLeft.addEventListener("mouseout", () => dPad.classList.remove("left"));
+
+dPadUp.addEventListener("mousedown", () => {
+    goPrevious();
+});
+
+dPadUp.addEventListener("mouseup", () => dPad.classList.remove("up"));
+dPadUp.addEventListener("mouseout", () => dPad.classList.remove("up"));
+
+dPadRight.addEventListener("mousedown", () => dPad.classList.add("right"));
+dPadRight.addEventListener("mouseup", () => dPad.classList.remove("right"));
+dPadRight.addEventListener("mouseout", () => dPad.classList.remove("right"));
+
+dPadDown.addEventListener("mousedown", () => {
+    goNext();
+});
+
+dPadDown.addEventListener("mouseup", () => dPad.classList.remove("down"));
+dPadDown.addEventListener("mouseout", () => dPad.classList.remove("down"));
 
 document.addEventListener("keyup", (event) => {
     const key = event.key;
@@ -193,27 +191,26 @@ document.addEventListener("keyup", (event) => {
         case "ArrowDown":
             dPad.classList.remove("down")
             break;
-    }
-
-    if (key === "Enter") {
-        switch (document.activeElement) {
-            case rightOpenRectangle:
-                openRightRectangle();
-                break;
-            case topOpenRectangle:
-                openTopRectangle();
-                break;
-            case dPadUp:
-                goPrevious();
-                break;
-            case dPadDown:
-                goNext();
-                break;
-        }
-    }
+    };
 });
 
-setTimeout(() => {
-    openTopRectangle();
-    openRightRectangle();
-}, 2000);
+/**
+ * Other buttons
+ */
+
+rightButton.addEventListener("click", () => {
+    if (background.hasAttribute("class")) {
+        playAudio();
+    };
+});
+
+longButton.addEventListener("click", () => {
+    screenTop.classList.toggle("online");
+    screenBottom.classList.toggle("online");
+
+    if (background.hasAttribute("class")) {
+        background.removeAttribute("class");
+    } else {
+        background.classList.add(typeArray[pokeCounter]);
+    };
+});
