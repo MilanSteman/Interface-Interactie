@@ -27,7 +27,7 @@ article {
         &:nth-of-type(4) {
             @include Slider(left, var(--hoogte2));
 
-            transform: translateZ(0.983em) translateX(calc(100% + 0.85em)) rotate3d(0, 1, 0, -180deg);
+            transform: translateZ(1em) translateX(calc(100% + var(--breedte-connector))) rotate3d(0, 1, 0, -180deg);
             transition: .5s ease-in-out;
 
             &.open {
